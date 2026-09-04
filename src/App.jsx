@@ -74,7 +74,7 @@ export default function App() {
 
       {/* NAV */}
       <nav style={{ maxWidth: 1100, margin: "0 auto", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div style={{ fontSize: 22, fontWeight: 900 }}>Site<span style={{ color: "#3b82f6" }}>Express</span></div>
+        <div style={{ fontSize: 22, fontWeight: 900 }}>Site<span style={{ color: "#3b82f6" }}>Minute</span></div>
         <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
           {!m && <><span onClick={() => go("metiers")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>M\u00E9tiers</span><span onClick={() => go("offres")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Offres</span><span onClick={() => go("options")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Options</span><span onClick={() => go("blog")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Blog</span></>}
           <button onClick={() => go("contact")} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "8px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: "pointer" }}>Devis gratuit</button>
@@ -306,12 +306,12 @@ export default function App() {
 
       {/* FOOTER */}
       <div style={{ padding: "24px 20px", borderTop: "1px solid #f1f5f9", textAlign: "center" }}>
-        <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 8 }}>Site<span style={{ color: "#3b82f6" }}>Express</span></div>
+        <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 8 }}>Site<span style={{ color: "#3b82f6" }}>Minute</span></div>
         <div style={{ marginBottom: 10 }}>
           <button onClick={() => setCgv(true)} style={{ background: "none", border: "none", color: "#94a3b8", fontSize: 12, cursor: "pointer", textDecoration: "underline", marginRight: 16, fontFamily: "inherit" }}>Mentions l\u00E9gales</button>
           <button onClick={() => setCgv(true)} style={{ background: "none", border: "none", color: "#94a3b8", fontSize: 12, cursor: "pointer", textDecoration: "underline", fontFamily: "inherit" }}>CGV</button>
         </div>
-        <p style={{ fontSize: 12, color: "#94a3b8", margin: 0 }}>{"\u00A9"} {new Date().getFullYear()} SiteExpress {"\u2014"} Cr\u00E9ation de sites web pour artisans, commerces et PME</p>
+        <p style={{ fontSize: 12, color: "#94a3b8", margin: 0 }}>{"\u00A9"} {new Date().getFullYear()} SiteMinute {"\u2014"} Cr\u00E9ation de sites web pour artisans, commerces et PME</p>
       </div>
 
       {/* CGV MODAL */}
@@ -323,7 +323,7 @@ export default function App() {
               <button onClick={() => setCgv(false)} style={{ background: "none", border: "none", fontSize: 22, cursor: "pointer", color: "#94a3b8" }}>{"\u2715"}</button>
             </div>
             <h3 style={{ color: "#3b82f6", fontSize: 15, marginTop: 16, marginBottom: 6 }}>1. \u00C9diteur du site</h3>
-            <p>SiteExpress {"\u2014"} Service de cr\u00E9ation de sites web professionnels. H\u00E9bergement : Vercel Inc., San Francisco, CA, USA.</p>
+            <p>SiteMinute {"\u2014"} Service de cr\u00E9ation de sites web professionnels. H\u00E9bergement : Vercel Inc., San Francisco, CA, USA.</p>
             <h3 style={{ color: "#3b82f6", fontSize: 15, marginTop: 16, marginBottom: 6 }}>2. Tarifs et paiement</h3>
             <p>Les prix sont en euros TTC. Le paiement s'effectue <strong>\u00E0 la livraison du site</strong>, apr\u00E8s validation par le client. Aucun acompte n'est demand\u00E9.</p>
             <h3 style={{ color: "#3b82f6", fontSize: 15, marginTop: 16, marginBottom: 6 }}>3. Livraison et validation</h3>
