@@ -45,9 +45,9 @@ const METIERS = [
 
 const BLOG = [
   { title: "Pourquoi 72% des clients ne vous appellent jamais sans site web", tag: "Guide", color: "#3b82f6", bg: "#eff6ff", content: "En 2026, le premier réflexe d'un client qui cherche un artisan c'est Google. Si vous n'avez pas de site, vous êtes invisible pour 3 clients potentiels sur 4. Un site vitrine à 399€ vous rend visible 24h/24." },
-  { title: "Comment appara\u00EEtre en premier sur Google dans votre ville", tag: "SEO local", color: "#d97706", bg: "#fef3c7", content: "La combinaison site web optimisé + fiche Google Business vous place devant vos concurrents. Votre ville dans le titre, vos quartiers dans le contenu, votre adresse dans le pied de page." },
-  { title: "Comment Marie a triplé ses rendez-vous gr\u00E2ce à son site", tag: "Témoignage", color: "#e91e63", bg: "#fce4ec", content: "Marie est prothésiste ongulaire. Avant son site : 8 clientes/semaine. Après : 25. Son secret : galerie photos avant/après + bouton WhatsApp + tarifs en ligne." },
-  { title: "Site web vs page Facebook : pourquoi les réseaux ne suffisent pas", tag: "Comparatif", color: "#2e7d32", bg: "#e8f5e9", content: "Vous ne contrôlez ni l'algorithme, ni la visibilité. Votre page peut être supprimée. Un site vous appartient, appara\u00EEt sur Google, et donne une image professionnelle." },
+  { title: "Comment apparaître en premier sur Google dans votre ville", tag: "SEO local", color: "#d97706", bg: "#fef3c7", content: "La combinaison site web optimisé + fiche Google Business vous place devant vos concurrents. Votre ville dans le titre, vos quartiers dans le contenu, votre adresse dans le pied de page." },
+  { title: "Comment Marie a triplé ses rendez-vous grâce à son site", tag: "Témoignage", color: "#e91e63", bg: "#fce4ec", content: "Marie est prothésiste ongulaire. Avant son site : 8 clientes/semaine. Après : 25. Son secret : galerie photos avant/après + bouton WhatsApp + tarifs en ligne." },
+  { title: "Site web vs page Facebook : pourquoi les réseaux ne suffisent pas", tag: "Comparatif", color: "#2e7d32", bg: "#e8f5e9", content: "Vous ne contrôlez ni l'algorithme, ni la visibilité. Votre page peut être supprimée. Un site vous appartient, apparaît sur Google, et donne une image professionnelle." },
   { title: "5 erreurs qui font fuir les clients de votre site", tag: "Pratique", color: "#7c3aed", bg: "#f3e8ff", content: "Site lent = 53% de départs. Pas de téléphone visible = 44% partent. Pas mobile = 60% de visiteurs perdus. Pas de photos = pas de confiance." }
 ];
 
@@ -189,7 +189,7 @@ export default function App() {
           </div>
           <div className="hero-g" style={{ marginTop: 28, display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.25)", padding: "10px 20px", borderRadius: 30 }}>
             <span style={{ fontSize: 18 }}>{"\u2705"}</span>
-            <span style={{ color: "#4ade80", fontSize: 14, fontWeight: 600 }}>Paiement à la livraison — vous ne payez que si le site vous pla\u00EEt</span>
+            <span style={{ color: "#4ade80", fontSize: 14, fontWeight: 600 }}>Paiement à la livraison — vous ne payez que si le site vous plaît</span>
           </div>
         </div>
       </div>
