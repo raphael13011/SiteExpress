@@ -304,6 +304,17 @@ export default function App() {
         </div>
       </div>
 
+
+      {/* A PROPOS */}
+      <div style={{ padding: "40px 20px", borderTop: "1px solid #f1f5f9" }}>
+        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: "#3b82f6", textTransform: "uppercase", letterSpacing: 2, marginBottom: 16 }}>{"\u00C0"} propos</div>
+          <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.8, margin: 0 }}>
+            Je m{"\u2019"}appelle Rapha{"\u00EB"}l, ing{"\u00E9"}nieur informaticien de m{"\u00E9"}tier. Passionn{"\u00E9"} de bricolage et titulaire d{"\u2019"}un CAP {"\u00C9"}lectricit{"\u00E9"} repass{"\u00E9"} en candidat libre, j{"\u2019"}ai retrouss{"\u00E9"} mes manches sur pas mal de chantiers. Cette exp{"\u00E9"}rience sur le terrain m{"\u2019"}a permis de comprendre vos r{"\u00E9"}alit{"\u00E9"}s, vos contraintes de temps et vos v{"\u00E9"}ritables enjeux au quotidien. Aujourd{"\u2019"}hui, je mets mes comp{"\u00E9"}tences d{"\u2019"}ing{"\u00E9"}nieur au service des artisans, ind{"\u00E9"}pendants et TPE pour cr{"\u00E9"}er des sites vitrines simples, efficaces et livr{"\u00E9"}s rapidement {"\u2014"} du travail propre et carr{"\u00E9"}, sans jargon technique.
+          </p>
+        </div>
+      </div>
+
       {/* FOOTER */}
       <div style={{ padding: "24px 20px", borderTop: "1px solid #f1f5f9", textAlign: "center" }}>
         <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 8 }}>Site<span style={{ color: "#3b82f6" }}>Minute</span></div>
