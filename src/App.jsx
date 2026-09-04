@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const PLANS = [
   { name: "Essentiel", price: "399", desc: "Votre vitrine en ligne en 48h", features: ["Template professionnel", "3 \u00E0 5 pages", "Adapt\u00E9 mobile & tablette", "Formulaire de contact", "Livr\u00E9 en 48h"], highlight: false },
@@ -65,6 +65,97 @@ export default function App() {
 
   useEffect(() => { const c = () => setM(window.innerWidth < 768); c(); window.addEventListener("resize", c); return () => window.removeEventListener("resize", c); }, []);
 
+  // Inject animations
+  useEffect(() => {
+    const s = document.createElement('style');
+    s.textContent = `
+      @keyframes fadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+      @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      @keyframes scaleIn { from { opacity:0; transform:scale(0.92); } to { opacity:1; transform:scale(1); } }
+      @keyframes slideL { from { opacity:0; transform:translateX(-40px); } to { opacity:1; transform:translateX(0); } }
+      @keyframes slideR { from { opacity:0; transform:translateX(40px); } to { opacity:1; transform:translateX(0); } }
+      @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+      @keyframes shimmer { 0% { background-position:-200% 0; } 100% { background-position:200% 0; } }
+      @keyframes countUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+      @keyframes glow { 0%,100% { box-shadow:0 0 20px rgba(59,130,246,0); } 50% { box-shadow:0 0 30px rgba(59,130,246,0.15); } }
+      .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+      .reveal.vis { opacity:1; transform:translateY(0); }
+      .reveal-d1 { transition-delay:0.1s; }
+      .reveal-d2 { transition-delay:0.2s; }
+      .reveal-d3 { transition-delay:0.3s; }
+      .reveal-d4 { transition-delay:0.4s; }
+      .hero-t { animation:fadeUp 0.9s ease forwards; }
+      .hero-s { animation:fadeUp 0.9s ease 0.15s forwards; opacity:0; }
+      .hero-j { animation:fadeUp 0.9s ease 0.3s forwards; opacity:0; }
+      .hero-b { animation:fadeUp 0.9s ease 0.45s forwards; opacity:0; }
+      .hero-g { animation:scaleIn 0.7s ease 0.6s forwards; opacity:0; }
+      .card-fx { transition:transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s ease, border-color 0.3s; }
+      .card-fx:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(15,23,42,0.08); }
+      .plan-fx { transition:transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s ease; }
+      .plan-fx:hover { transform:translateY(-8px) scale(1.02); box-shadow:0 20px 50px rgba(59,130,246,0.12); }
+      .opt-fx { transition:all 0.2s ease; }
+      .opt-fx:hover { transform:translateX(6px); border-color:#3b82f6 !important; background:#eff6ff !important; }
+      .btn-glow { position:relative; overflow:hidden; transition:transform 0.2s, box-shadow 0.3s; }
+      .btn-glow:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(59,130,246,0.35); }
+      .btn-glow::after { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent); animation:shimmer 3s infinite; }
+      .step-fx:hover .step-n-fx { animation:float 2s ease infinite; }
+      .stat-fx { transition:transform 0.3s ease; cursor:default; }
+      .stat-fx:hover { transform:scale(1.12); }
+      .temo-fx { transition:transform 0.3s ease, box-shadow 0.3s; }
+      .temo-fx:hover { transform:translateY(-4px); box-shadow:0 12px 36px rgba(0,0,0,0.06); }
+      .guarantee-fx { animation:glow 3s ease infinite; }
+    `;
+    document.head.appendChild(s);
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    setTimeout(() => document.querySelectorAll('.reveal').forEach(el => obs.observe(el)), 100);
+
+    return () => obs.disconnect();
+  }, []);
+
+  // Scroll animations
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+      @keyframes slideLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+      @keyframes slideRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+      @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+      .anim { opacity: 0; }
+      .anim.visible { animation: fadeUp 0.6s ease forwards; }
+      .anim-delay-1 { animation-delay: 0.1s !important; }
+      .anim-delay-2 { animation-delay: 0.2s !important; }
+      .anim-delay-3 { animation-delay: 0.3s !important; }
+      .anim-delay-4 { animation-delay: 0.4s !important; }
+      .hero-title { animation: fadeUp 0.8s ease forwards; }
+      .hero-sub { animation: fadeUp 0.8s ease 0.2s forwards; opacity: 0; }
+      .hero-btns-anim { animation: fadeUp 0.8s ease 0.4s forwards; opacity: 0; }
+      .hero-badge-anim { animation: fadeUp 0.8s ease 0.6s forwards; opacity: 0; }
+      .stat-anim:hover { transform: scale(1.1); transition: transform 0.2s; }
+      .plan-hover { transition: transform 0.3s, box-shadow 0.3s !important; }
+      .plan-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(59,130,246,0.12); }
+      .option-hover { transition: all 0.15s !important; }
+      .option-hover:hover { transform: translateX(4px); }
+      .metier-float:hover { animation: float 2s ease infinite; }
+      .btn-shine { position: relative; overflow: hidden; }
+      .btn-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); animation: shimmer 3s infinite; }
+    `;
+    document.head.appendChild(style);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+    return () => { observer.disconnect(); document.head.removeChild(style); };
+  }, []);
+
   const toggle = (name, price) => setSel(p => p.find(o => o.name === name) ? p.filter(o => o.name !== name) : [...p, { name, price }]);
   const total = sel.reduce((s, o) => s + o.price, 0);
   const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -85,18 +176,18 @@ export default function App() {
       <div style={{ background: "linear-gradient(160deg, #0f172a, #1e293b)", padding: m ? "50px 20px" : "80px 20px 70px", textAlign: "center" }}>
         <div style={{ maxWidth: 750, margin: "0 auto" }}>
           <div style={{ background: "rgba(59,130,246,0.13)", color: "#60a5fa", padding: "6px 16px", borderRadius: 20, fontSize: 13, fontWeight: 600, display: "inline-block", marginBottom: 24 }}>Cr\u00E9ation de sites web pour professionnels</div>
-          <h1 style={{ fontSize: m ? 32 : 50, fontWeight: 900, color: "#fff", lineHeight: 1.1, margin: "0 0 20px" }}>Vos clients vous cherchent sur Google. <span style={{ color: "#3b82f6" }}>Ils vous trouvent ?</span></h1>
-          <p style={{ fontSize: m ? 16 : 18, color: "#94a3b8", margin: "0 auto 20px", lineHeight: 1.7, maxWidth: 560 }}>Un site professionnel pour votre activit\u00E9, livr\u00E9 en 48h. Moderne, rapide, visible sur Google. \u00C0 partir de 399\u20AC.</p>
-          <div style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap", marginBottom: 28 }}>
+          <h1 className="hero-t" style={{ fontSize: m ? 32 : 50, fontWeight: 900, color: "#fff", lineHeight: 1.1, margin: "0 0 20px" }}>Vos clients vous cherchent sur Google. <span style={{ color: "#3b82f6" }}>Ils vous trouvent ?</span></h1>
+          <p className="hero-s" style={{ fontSize: m ? 16 : 18, color: "#94a3b8", margin: "0 auto 20px", lineHeight: 1.7, maxWidth: 560 }}>Un site professionnel pour votre activit\u00E9, livr\u00E9 en 48h. Moderne, rapide, visible sur Google. \u00C0 partir de 399\u20AC.</p>
+          <div className="hero-j" style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap", marginBottom: 28 }}>
             {["\uD83D\uDD27 \u00C9lectricien","\uD83D\uDC85 Proth\u00E9siste ongulaire","\uD83C\uDF55 Restaurant","\uD83D\uDD28 Plombier","\uD83D\uDC87 Coiffeur","\uD83C\uDFD7\uFE0F BTP","\uD83D\uDCF8 Photographe","\uD83E\uDDF9 Nettoyage"].map((j,i) => (
               <span key={i} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "#94a3b8", padding: "6px 14px", borderRadius: 20, fontSize: 13 }}>{j}</span>
             ))}
           </div>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <button onClick={() => go("offres")} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "14px 32px", borderRadius: 10, fontSize: 16, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 20px rgba(59,130,246,0.3)" }}>Voir les offres</button>
+          <div className="hero-b" style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <button onClick={() => go("offres")} className="btn-glow" style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "14px 32px", borderRadius: 10, fontSize: 16, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 20px rgba(59,130,246,0.3)" }}>Voir les offres</button>
             <button onClick={() => go("contact")} style={{ background: "transparent", color: "#94a3b8", border: "1px solid #334155", padding: "14px 32px", borderRadius: 10, fontSize: 16, fontWeight: 600, cursor: "pointer" }}>Devis gratuit {"\u2192"}</button>
           </div>
-          <div style={{ marginTop: 28, display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.25)", padding: "10px 20px", borderRadius: 30 }}>
+          <div className="hero-g" style={{ marginTop: 28, display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.25)", padding: "10px 20px", borderRadius: 30 }}>
             <span style={{ fontSize: 18 }}>{"\u2705"}</span>
             <span style={{ color: "#4ade80", fontSize: 14, fontWeight: 600 }}>Paiement \u00E0 la livraison \u2014 vous ne payez que si le site vous pla\u00EEt</span>
           </div>
@@ -107,7 +198,7 @@ export default function App() {
       <div style={{ padding: "32px 20px", borderBottom: "1px solid #f1f5f9" }}>
         <div style={{ maxWidth: 750, margin: "0 auto", display: "flex", justifyContent: "center", gap: m ? 20 : 50, flexWrap: "wrap", textAlign: "center" }}>
           {[{ v: "48h", l: "D\u00E9lai de livraison" }, { v: "399\u20AC", l: "\u00C0 partir de" }, { v: "100%", l: "Adapt\u00E9 mobile" }, { v: "49\u20AC/mois", l: "Maintenance tout inclus" }].map((s, i) => (
-            <div key={i}><div style={{ fontSize: 24, fontWeight: 900, color: "#3b82f6" }}>{s.v}</div><div style={{ fontSize: 12, color: "#64748b", marginTop: 4 }}>{s.l}</div></div>
+            <div key={i} className="stat-fx"><div style={{ fontSize: 24, fontWeight: 900, color: "#3b82f6" }}>{s.v}</div><div style={{ fontSize: 12, color: "#64748b", marginTop: 4 }}>{s.l}</div></div>
           ))}
         </div>
       </div>
@@ -115,13 +206,11 @@ export default function App() {
       {/* METIERS */}
       <div id="metiers" style={{ padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }}>Un site adapt\u00E9 \u00E0 votre m\u00E9tier</h2>
+          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Un site adapt\u00E9 \u00E0 votre m\u00E9tier</h2>
           <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Chaque profession a ses besoins. On s'adapte.</p>
           <div style={{ display: "grid", gridTemplateColumns: m ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: 14 }}>
             {METIERS.map((mt, i) => (
-              <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 16px", textAlign: "center", transition: "all 0.2s" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3b82f6"; e.currentTarget.style.transform = "translateY(-3px)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.transform = "translateY(0)"; }}
+              <div key={i} className="card-fx" style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 16px", textAlign: "center" }}
               >
                 <div style={{ fontSize: 32, marginBottom: 10 }}>{mt.icon}</div>
                 <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 4 }}>{mt.name}</div>
@@ -135,11 +224,11 @@ export default function App() {
       {/* OFFRES */}
       <div id="offres" style={{ background: "#f8fafc", padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }}>Des offres claires, sans surprise</h2>
+          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Des offres claires, sans surprise</h2>
           <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Pas d'abonnement cach\u00E9. Vous \u00EAtes propri\u00E9taire de votre site.</p>
           <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(3, 1fr)", gap: 20 }}>
             {PLANS.map((plan, i) => (
-              <div key={i} style={{ background: plan.highlight ? "#0f172a" : "#fff", border: plan.highlight ? "2px solid #3b82f6" : "1px solid #e2e8f0", borderRadius: 20, padding: 32, position: "relative", display: "flex", flexDirection: "column" }}>
+              <div key={i} className="plan-fx" style={{ background: plan.highlight ? "#0f172a" : "#fff", border: plan.highlight ? "2px solid #3b82f6" : "1px solid #e2e8f0", borderRadius: 20, padding: 32, position: "relative", display: "flex", flexDirection: "column" }}>
                 {plan.highlight && <div style={{ position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)", background: "#3b82f6", color: "#fff", padding: "4px 16px", borderRadius: 20, fontSize: 12, fontWeight: 600 }}>Le + choisi</div>}
                 <div style={{ fontSize: 14, fontWeight: 600, color: "#3b82f6", marginBottom: 6 }}>{plan.name}</div>
                 <div style={{ fontSize: 40, fontWeight: 900, color: plan.highlight ? "#fff" : "#0f172a", marginBottom: 4 }}>{plan.price ? <>{plan.price}<span style={{ fontSize: 18, fontWeight: 500 }}>{"\u20AC"}</span></> : "Sur devis"}</div>
@@ -176,7 +265,7 @@ export default function App() {
       {/* OPTIONS */}
       <div id="options" style={{ background: "#f8fafc", padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }}>Options \u00E0 la carte</h2>
+          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Options \u00E0 la carte</h2>
           <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Ajoutez uniquement ce dont vous avez besoin</p>
           {OPTIONS.map((cat, i) => (
             <div key={i}>
@@ -184,7 +273,7 @@ export default function App() {
               {cat.items.map((item, j) => {
                 const s = sel.find(o => o.name === item.name);
                 return (
-                  <div key={j} onClick={() => toggle(item.name, item.price)} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderRadius: 10, background: s ? "#eff6ff" : "#fff", border: s ? "1px solid #3b82f6" : "1px solid #f1f5f9", marginBottom: 6, cursor: "pointer", transition: "all 0.2s" }}>
+                  <div key={j} onClick={() => toggle(item.name, item.price)} className="opt-fx" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderRadius: 10, background: s ? "#eff6ff" : "#fff", border: s ? "1px solid #3b82f6" : "1px solid #f1f5f9", marginBottom: 6, cursor: "pointer" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                       <div style={{ width: 20, height: 20, borderRadius: 4, border: s ? "none" : "2px solid #d1d5db", background: s ? "#3b82f6" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 12 }}>{s ? "\u2713" : ""}</div>
                       <span style={{ fontSize: 14, fontWeight: s ? 600 : 400 }}>{item.name}</span>
@@ -207,11 +296,11 @@ export default function App() {
       {/* COMMENT CA MARCHE */}
       <div style={{ padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }}>Simple comme bonjour</h2>
+          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Simple comme bonjour</h2>
           <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Vous n'avez rien de technique \u00E0 faire</p>
           <div style={{ display: "flex", gap: 32, flexWrap: "wrap", justifyContent: "center" }}>
             {[{ n: "1", t: "Vous nous appelez", d: "Expliquez votre activit\u00E9 en 5 minutes. Vos services, vos tarifs. C'est tout." }, { n: "2", t: "On cr\u00E9e votre site", d: "Design, textes, photos. On s'occupe de tout. Vous validez avant mise en ligne." }, { n: "3", t: "Vos clients vous trouvent", d: "Votre site est en ligne, visible sur Google. Vous recevez des appels et des demandes." }].map((s, i) => (
-              <div key={i} style={{ flex: "1 1 200px", maxWidth: 240, textAlign: "center" }}>
+              <div key={i} className="reveal" style={{ flex: "1 1 200px", maxWidth: 240, textAlign: "center" }}>
                 <div style={{ width: 52, height: 52, borderRadius: "50%", background: "#0f172a", color: "#3b82f6", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px", fontSize: 22, fontWeight: 900 }}>{s.n}</div>
                 <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>{s.t}</div>
                 <div style={{ fontSize: 14, color: "#64748b", lineHeight: 1.6 }}>{s.d}</div>
@@ -224,11 +313,11 @@ export default function App() {
       {/* TEMOIGNAGES */}
       <div style={{ background: "#f8fafc", padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }}>Ils nous font confiance</h2>
+          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Ils nous font confiance</h2>
           <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Des professionnels comme vous</p>
           <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(2, 1fr)", gap: 16 }}>
             {TEMOIGNAGES.map((t, i) => (
-              <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: 24 }}>
+              <div key={i} className="temo-fx" style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: 24 }}>
                 <div style={{ color: "#f59e0b", fontSize: 16, marginBottom: 10 }}>{t.stars}</div>
                 <div style={{ fontSize: 14, color: "#475569", lineHeight: 1.6, marginBottom: 12, fontStyle: "italic" }}>"{t.text}"</div>
                 <div style={{ fontSize: 13, fontWeight: 700 }}>{t.author}</div>
@@ -242,7 +331,7 @@ export default function App() {
       {/* BLOG */}
       <div id="blog" style={{ padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }}>Nos conseils pour votre activit\u00E9</h2>
+          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Nos conseils pour votre activit\u00E9</h2>
           <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Guides pratiques pour d\u00E9velopper votre pr\u00E9sence en ligne</p>
           <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(2, 1fr)", gap: 16 }}>
             {BLOG.map((b, i) => (
@@ -258,7 +347,7 @@ export default function App() {
 
       {/* GARANTIE */}
       <div style={{ padding: "40px 20px" }}>
-        <div style={{ maxWidth: 700, margin: "0 auto", background: "linear-gradient(135deg, #065f46, #047857)", borderRadius: 20, padding: 36, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap", justifyContent: "center" }}>
+        <div className="guarantee-fx" style={{ maxWidth: 700, margin: "0 auto", background: "linear-gradient(135deg, #065f46, #047857)", borderRadius: 20, padding: 36, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap", justifyContent: "center" }}>
           <div style={{ fontSize: 48 }}>{"\uD83D\uDEE1\uFE0F"}</div>
           <div style={{ flex: 1, minWidth: 250 }}>
             <h3 style={{ fontSize: 22, fontWeight: 800, color: "#fff", margin: "0 0 8px" }}>Satisfait ou vous ne payez pas</h3>
@@ -270,7 +359,7 @@ export default function App() {
       {/* CONTACT */}
       <div id="contact" style={{ background: "#0f172a", padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 550, margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, color: "#fff", margin: "0 0 8px" }}>Demandez votre devis gratuit</h2>
+          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, color: "#fff", margin: "0 0 8px" }} className="reveal">Demandez votre devis gratuit</h2>
           <p style={{ fontSize: 15, color: "#94a3b8", margin: "0 0 32px" }}>R\u00E9ponse en moins de 24h. Sans engagement.</p>
           <div style={{ background: "#1e293b", borderRadius: 20, padding: m ? 24 : 32, textAlign: "left" }}>
             {[{ l: "Votre nom ou entreprise", p: "Ex: Boulangerie Martin, \u00C9lectricit\u00E9 Dupont..." }, { l: "Email ou t\u00E9l\u00E9phone", p: "email@exemple.com ou 06 12 34 56 78" }, { l: "Votre m\u00E9tier", p: "Ex: \u00C9lectricien, restaurant, coiffeur..." }].map((f, i) => (
@@ -299,7 +388,7 @@ export default function App() {
                 <div style={{ fontSize: 14, fontWeight: 700, color: "#3b82f6", marginTop: 8 }}>Total options : +{total}{"\u20AC"}</div>
               </div>
             )}
-            <button onClick={() => alert("Merci ! Nous vous recontactons dans les 24h.")} style={{ width: "100%", padding: 16, background: "#3b82f6", border: "none", borderRadius: 10, color: "#fff", fontSize: 16, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 20px rgba(59,130,246,0.3)" }}>Envoyer ma demande</button>
+            <button onClick={() => alert("Merci ! Nous vous recontactons dans les 24h.")} className="btn-glow" style={{ width: "100%", padding: 16, background: "#3b82f6", border: "none", borderRadius: 10, color: "#fff", fontSize: 16, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 20px rgba(59,130,246,0.3)" }}>Envoyer ma demande</button>
           </div>
         </div>
       </div>
