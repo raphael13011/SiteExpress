@@ -388,7 +388,27 @@ export default function App() {
                 <div style={{ fontSize: 14, fontWeight: 700, color: "#3b82f6", marginTop: 8 }}>Total options : +{total}{"€"}</div>
               </div>
             )}
-            <button onClick={() => alert("Merci ! Nous vous recontactons dans les 24h.")} className="btn-glow" style={{ width: "100%", padding: 16, background: "#3b82f6", border: "none", borderRadius: 10, color: "#fff", fontSize: 16, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 20px rgba(59,130,246,0.3)" }}>Envoyer ma demande</button>
+            <button onClick={async () => {
+              const form = document.querySelectorAll('#contact input, #contact select, #contact textarea');
+              const nom = form[0]?.value;
+              const contact = form[1]?.value;
+              const metier = form[2]?.value;
+              const formule = form[3]?.value;
+              const projet = form[4]?.value;
+              if (!nom || !contact) { alert("Merci de remplir votre nom et contact."); return; }
+              try {
+                const resp = await fetch("/api/contact", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ nom, contact, metier, formule, projet, options: sel })
+                });
+                if (resp.ok) {
+                  alert("Merci " + nom + " ! Nous vous recontactons dans les 24h.");
+                  form.forEach(f => f.value = "");
+                  setSel([]);
+                } else { alert("Erreur, réessayez ou contactez-nous directement."); }
+              } catch(e) { alert("Erreur réseau, réessayez."); }
+            }} className="btn-glow" style={{ width: "100%", padding: 16, background: "#3b82f6", border: "none", borderRadius: 10, color: "#fff", fontSize: 16, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 20px rgba(59,130,246,0.3)" }}>Envoyer ma demande</button>
           </div>
         </div>
       </div>
