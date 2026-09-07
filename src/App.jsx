@@ -481,6 +481,11 @@ export default function App() {
                 </div>
               )}
             </div>
+            <div onClick={() => { setChatOpen(false); go("options"); }} style={{ padding: "8px 14px", background: "linear-gradient(135deg, #1e3a5f, #1e293b)", borderTop: "1px solid #334155", cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 14 }}>🤖</span>
+              <span style={{ fontSize: 11, color: "#60a5fa", lineHeight: 1.4 }}>Ce chatbot vous plaît ? <strong>Ajoutez-le à votre site pour 99€.</strong></span>
+              <span style={{ fontSize: 11, color: "#3b82f6", marginLeft: "auto" }}>→</span>
+            </div>
             <div style={{ padding: 12, borderTop: "1px solid #334155", display: "flex", gap: 8 }}>
               <input value={chatInput} onChange={(e) => setChatInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && sendChat()} placeholder="Votre question..." style={{ flex: 1, padding: "10px 14px", background: "#1e293b", border: "1px solid #334155", borderRadius: 10, color: "#fff", fontSize: 14, outline: "none", fontFamily: "inherit" }} />
               <button onClick={sendChat} disabled={chatLoading} style={{ background: "#3b82f6", color: "#fff", border: "none", borderRadius: 10, padding: "10px 16px", fontSize: 14, fontWeight: 600, cursor: "pointer" }}>→</button>
