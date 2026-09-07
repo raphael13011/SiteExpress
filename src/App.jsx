@@ -63,6 +63,7 @@ export default function App() {
   const [sel, setSel] = useState([]);
   const [cgv, setCgv] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
+  const [showRdv, setShowRdv] = useState(false);
   const [chatMessages, setChatMessages] = useState([{ role: "assistant", content: "Bonjour ! Je suis l'assistant Site Minute. Comment puis-je vous aider ?" }]);
   const [chatInput, setChatInput] = useState("");
   const [chatLoading, setChatLoading] = useState(false);
@@ -88,6 +89,14 @@ export default function App() {
   };
 
   useEffect(() => { const c = () => setM(window.innerWidth < 768); c(); window.addEventListener("resize", c); return () => window.removeEventListener("resize", c); }, []);
+
+  // Load Cal.com embed
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://app.cal.com/embed/embed.js';
+    script.async = true;
+    document.head.appendChild(script);
+  }, []);
 
   // Inject animations
   useEffect(() => {
@@ -192,7 +201,7 @@ export default function App() {
         <div style={{ fontSize: 22, fontWeight: 900 }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
         <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
           {!m && <><span onClick={() => go("metiers")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Métiers</span><span onClick={() => go("offres")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Offres</span><span onClick={() => go("options")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Options</span><span onClick={() => go("blog")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Blog</span></>}
-          <a href="https://cal.com/sitemute.fr/15min" target="_blank" rel="noopener noreferrer" style={{ color: "#64748b", fontSize: 14, cursor: "pointer", textDecoration: "none", fontWeight: 500 }}>Prendre RDV</a>
+          <span onClick={() => setShowRdv(true)} style={{ color: "#64748b", fontSize: 14, cursor: "pointer", fontWeight: 500 }}>Prendre RDV</span>
           <button onClick={() => go("contact")} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "8px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: "pointer" }}>Devis gratuit</button>
         </div>
       </nav>
@@ -386,7 +395,7 @@ export default function App() {
         <div style={{ maxWidth: 550, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, color: "#fff", margin: "0 0 8px" }} className="reveal">Demandez votre devis gratuit</h2>
           <p style={{ fontSize: 15, color: "#94a3b8", margin: "0 0 20px" }}>Réponse en moins de 24h. Sans engagement.</p>
-          <a href="https://cal.com/sitemute.fr/15min" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", padding: "12px 24px", borderRadius: 30, color: "#4ade80", fontSize: 15, fontWeight: 600, textDecoration: "none", marginBottom: 24 }}>📅 Ou prenez directement un RDV de 15 min</a>
+          <button onClick={() => setShowRdv(true)} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", padding: "12px 24px", borderRadius: 30, color: "#4ade80", fontSize: 15, fontWeight: 600, cursor: "pointer", marginBottom: 24 }}>📅 Ou prenez directement un RDV de 15 min</button>
           <div style={{ background: "#1e293b", borderRadius: 20, padding: m ? 24 : 32, textAlign: "left" }}>
             {[{ l: "Votre nom ou entreprise", p: "Ex: Boulangerie Martin, Électricité Dupont..." }, { l: "Email ou téléphone", p: "email@exemple.com ou 06 12 34 56 78" }, { l: "Votre métier", p: "Ex: Électricien, restaurant, coiffeur..." }].map((f, i) => (
               <div key={i} style={{ marginBottom: 16 }}>
@@ -496,6 +505,24 @@ export default function App() {
         )}
         <button onClick={() => setChatOpen(!chatOpen)} style={{ width: 60, height: 60, borderRadius: "50%", background: "linear-gradient(135deg, #3b82f6, #2563eb)", color: "#fff", border: "none", cursor: "pointer", boxShadow: "0 8px 30px rgba(59,130,246,0.35)", fontSize: 24, display: "flex", alignItems: "center", justifyContent: "center", marginLeft: "auto" }}>{chatOpen ? "✕" : "💬"}</button>
       </div>
+
+      {/* RDV MODAL */}
+      {showRdv && (
+        <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.7)", zIndex: 1001, display: "flex", justifyContent: "center", alignItems: "center", padding: 16 }} onClick={() => setShowRdv(false)}>
+          <div style={{ background: "#fff", borderRadius: 20, width: m ? "100%" : 700, maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column" }} onClick={(e) => e.stopPropagation()}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 24px", borderBottom: "1px solid #f1f5f9" }}>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 800 }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
+                <div style={{ fontSize: 13, color: "#64748b" }}>Réservez un appel gratuit de 15 min</div>
+              </div>
+              <button onClick={() => setShowRdv(false)} style={{ background: "none", border: "none", fontSize: 22, cursor: "pointer", color: "#94a3b8" }}>✕</button>
+            </div>
+            <div style={{ flex: 1, overflow: "auto" }}>
+              <iframe src="https://cal.com/sitemute.fr/15min?embed=true&theme=light" style={{ width: "100%", height: 600, border: "none" }} />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* CGV MODAL */}
       {cgv && (
