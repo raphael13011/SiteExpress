@@ -192,6 +192,7 @@ export default function App() {
         <div style={{ fontSize: 22, fontWeight: 900 }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
         <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
           {!m && <><span onClick={() => go("metiers")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Métiers</span><span onClick={() => go("offres")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Offres</span><span onClick={() => go("options")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Options</span><span onClick={() => go("blog")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Blog</span></>}
+          <a href="https://cal.com/sitemute.fr/15min" target="_blank" rel="noopener noreferrer" style={{ color: "#64748b", fontSize: 14, cursor: "pointer", textDecoration: "none", fontWeight: 500 }}>Prendre RDV</a>
           <button onClick={() => go("contact")} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "8px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: "pointer" }}>Devis gratuit</button>
         </div>
       </nav>
@@ -384,7 +385,8 @@ export default function App() {
       <div id="contact" style={{ background: "#0f172a", padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 550, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, color: "#fff", margin: "0 0 8px" }} className="reveal">Demandez votre devis gratuit</h2>
-          <p style={{ fontSize: 15, color: "#94a3b8", margin: "0 0 32px" }}>Réponse en moins de 24h. Sans engagement.</p>
+          <p style={{ fontSize: 15, color: "#94a3b8", margin: "0 0 20px" }}>Réponse en moins de 24h. Sans engagement.</p>
+          <a href="https://cal.com/sitemute.fr/15min" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", padding: "12px 24px", borderRadius: 30, color: "#4ade80", fontSize: 15, fontWeight: 600, textDecoration: "none", marginBottom: 24 }}>📅 Ou prenez directement un RDV de 15 min</a>
           <div style={{ background: "#1e293b", borderRadius: 20, padding: m ? 24 : 32, textAlign: "left" }}>
             {[{ l: "Votre nom ou entreprise", p: "Ex: Boulangerie Martin, Électricité Dupont..." }, { l: "Email ou téléphone", p: "email@exemple.com ou 06 12 34 56 78" }, { l: "Votre métier", p: "Ex: Électricien, restaurant, coiffeur..." }].map((f, i) => (
               <div key={i} style={{ marginBottom: 16 }}>
