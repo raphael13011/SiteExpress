@@ -23,9 +23,9 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'SiteMinute <onboarding@resend.dev>',
+        from: 'Site Minute <onboarding@resend.dev>',
         to: process.env.LEAD_EMAIL,
-        subject: `Nouveau devis SiteMinute - ${nom} (${metier || 'Non renseigne'})`,
+        subject: `Nouveau devis Site Minute - ${nom} (${metier || 'Non renseigne'})`,
         text: `NOUVELLE DEMANDE DE DEVIS\n\nNom / Entreprise : ${nom}\nContact : ${contact}\nMetier : ${metier || 'Non renseigne'}\nFormule : ${formule || 'Non choisie'}\n\nProjet :\n${projet || 'Non renseigne'}\n\nOptions selectionnees :\n${optionsText}\n\nTotal options : +${totalOptions}\u20AC\n\n---\nEnvoye depuis siteminute.fr`,
       }),
     });
