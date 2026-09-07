@@ -62,6 +62,30 @@ export default function App() {
   const [m, setM] = useState(false);
   const [sel, setSel] = useState([]);
   const [cgv, setCgv] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [chatMessages, setChatMessages] = useState([{ role: "assistant", content: "Bonjour ! Je suis l'assistant Site Minute. Comment puis-je vous aider ?" }]);
+  const [chatInput, setChatInput] = useState("");
+  const [chatLoading, setChatLoading] = useState(false);
+
+  const sendChat = async () => {
+    if (!chatInput.trim() || chatLoading) return;
+    const msg = chatInput.trim();
+    setChatInput("");
+    setChatMessages(prev => [...prev, { role: "user", content: msg }]);
+    setChatLoading(true);
+    try {
+      const resp = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: msg, history: chatMessages })
+      });
+      const data = await resp.json();
+      setChatMessages(prev => [...prev, { role: "assistant", content: data.reply || "Désolé, une erreur est survenue." }]);
+    } catch (e) {
+      setChatMessages(prev => [...prev, { role: "assistant", content: "Erreur de connexion. Réessayez." }]);
+    }
+    setChatLoading(false);
+  };
 
   useEffect(() => { const c = () => setM(window.innerWidth < 768); c(); window.addEventListener("resize", c); return () => window.removeEventListener("resize", c); }, []);
 
@@ -432,6 +456,38 @@ export default function App() {
           <button onClick={() => setCgv(true)} style={{ background: "none", border: "none", color: "#94a3b8", fontSize: 12, cursor: "pointer", textDecoration: "underline", fontFamily: "inherit" }}>CGV</button>
         </div>
         <p style={{ fontSize: 12, color: "#94a3b8", margin: 0 }}>{"©"} {new Date().getFullYear()} Site Minute {"—"} Création de sites web pour artisans, commerces et PME</p>
+      </div>
+
+      {/* CHATBOT */}
+      <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 999 }}>
+        {chatOpen && (
+          <div style={{ width: m ? "calc(100vw - 48px)" : 380, height: 480, background: "#0f172a", borderRadius: 20, boxShadow: "0 20px 60px rgba(0,0,0,0.3)", display: "flex", flexDirection: "column", overflow: "hidden", marginBottom: 12 }}>
+            <div style={{ background: "#1e293b", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#22c55e" }} />
+                <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>Site Minute - Assistant</span>
+              </div>
+              <button onClick={() => setChatOpen(false)} style={{ background: "none", border: "none", color: "#94a3b8", fontSize: 18, cursor: "pointer" }}>✕</button>
+            </div>
+            <div style={{ flex: 1, overflowY: "auto", padding: 16, display: "flex", flexDirection: "column", gap: 10 }}>
+              {chatMessages.map((msg, i) => (
+                <div key={i} style={{ alignSelf: msg.role === "user" ? "flex-end" : "flex-start", maxWidth: "80%" }}>
+                  <div style={{ background: msg.role === "user" ? "#3b82f6" : "#1e293b", color: "#fff", padding: "10px 14px", borderRadius: msg.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px", fontSize: 13, lineHeight: 1.5 }}>{msg.content}</div>
+                </div>
+              ))}
+              {chatLoading && (
+                <div style={{ alignSelf: "flex-start" }}>
+                  <div style={{ background: "#1e293b", color: "#94a3b8", padding: "10px 14px", borderRadius: "16px 16px 16px 4px", fontSize: 13 }}>...</div>
+                </div>
+              )}
+            </div>
+            <div style={{ padding: 12, borderTop: "1px solid #334155", display: "flex", gap: 8 }}>
+              <input value={chatInput} onChange={(e) => setChatInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && sendChat()} placeholder="Votre question..." style={{ flex: 1, padding: "10px 14px", background: "#1e293b", border: "1px solid #334155", borderRadius: 10, color: "#fff", fontSize: 14, outline: "none", fontFamily: "inherit" }} />
+              <button onClick={sendChat} disabled={chatLoading} style={{ background: "#3b82f6", color: "#fff", border: "none", borderRadius: 10, padding: "10px 16px", fontSize: 14, fontWeight: 600, cursor: "pointer" }}>→</button>
+            </div>
+          </div>
+        )}
+        <button onClick={() => setChatOpen(!chatOpen)} style={{ width: 60, height: 60, borderRadius: "50%", background: "linear-gradient(135deg, #3b82f6, #2563eb)", color: "#fff", border: "none", cursor: "pointer", boxShadow: "0 8px 30px rgba(59,130,246,0.35)", fontSize: 24, display: "flex", alignItems: "center", justifyContent: "center", marginLeft: "auto" }}>{chatOpen ? "✕" : "💬"}</button>
       </div>
 
       {/* CGV MODAL */}
