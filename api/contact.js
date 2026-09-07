@@ -9,9 +9,17 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Nom et contact requis' });
   }
 
+  const leadEmail = process.env.LEAD_EMAIL;
+  const resendKey = process.env.RESEND_API_KEY;
+
+  if (!leadEmail || !resendKey) {
+    console.error('Missing env vars - LEAD_EMAIL:', !!leadEmail, 'RESEND_API_KEY:', !!resendKey);
+    return res.status(500).json({ error: 'Configuration manquante' });
+  }
+
   try {
     const optionsText = options && options.length > 0
-      ? options.map(o => `- ${o.name} (+${o.price}\u20AC)`).join('\n')
+      ? options.map(o => '- ' + o.name + ' (+' + o.price + ' EUR)').join('\n')
       : 'Aucune';
 
     const totalOptions = options ? options.reduce((s, o) => s + o.price, 0) : 0;
@@ -19,14 +27,14 @@ export default async function handler(req, res) {
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Authorization': 'Bearer ' + resendKey,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Site Minute <onboarding@resend.dev>',
-        to: process.env.LEAD_EMAIL,
-        subject: `Nouveau devis Site Minute - ${nom} (${metier || 'Non renseigne'})`,
-        text: `NOUVELLE DEMANDE DE DEVIS\n\nNom / Entreprise : ${nom}\nContact : ${contact}\nMetier : ${metier || 'Non renseigne'}\nFormule : ${formule || 'Non choisie'}\n\nProjet :\n${projet || 'Non renseigne'}\n\nOptions selectionnees :\n${optionsText}\n\nTotal options : +${totalOptions}\u20AC\n\n---\nEnvoye depuis siteminute.fr`,
+        from: 'onboarding@resend.dev',
+        to: leadEmail,
+        subject: 'Nouveau devis Site Minute - ' + nom + ' (' + (metier || 'Non renseigne') + ')',
+        text: 'NOUVELLE DEMANDE DE DEVIS\n\nNom / Entreprise : ' + nom + '\nContact : ' + contact + '\nMetier : ' + (metier || 'Non renseigne') + '\nFormule : ' + (formule || 'Non choisie') + '\n\nProjet :\n' + (projet || 'Non renseigne') + '\n\nOptions selectionnees :\n' + optionsText + '\n\nTotal options : +' + totalOptions + ' EUR\n\n---\nEnvoye depuis siteminute.fr',
       }),
     });
 
