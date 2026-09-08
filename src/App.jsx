@@ -58,11 +58,136 @@ const TEMOIGNAGES = [
   { stars: "★★★★★", text: "J'avais un devis à 3 500€ chez une agence. Ici j'ai payé 699€ et le résultat est aussi bien. Je recommande.", author: "Karim B.", job: "Plombier — Montpellier" }
 ];
 
+
+const BLOG_FULL = [
+  { id: "clients-sans-site", title: "Pourquoi 72% des clients ne vous appellent jamais sans site web", tag: "Guide", color: "#3b82f6", bg: "#eff6ff", readTime: "5 min", date: "2026-09-01",
+    content: `En 2026, le premier réflexe d'un client qui cherche un artisan c'est Google. Pas les Pages Jaunes, pas le bouche à oreille. Si vous n'avez pas de site, vous êtes invisible pour 3 clients potentiels sur 4.
+
+## Les chiffres qui parlent
+
+Une étude IFOP montre que 72% des Français ne contactent jamais un professionnel qui n'a pas de site web. Pas parce que vous êtes mauvais — parce qu'ils ne vous trouvent pas. Quand quelqu'un tape "électricien Marseille" sur Google, seuls les pros avec un site apparaissent.
+
+## Ce que ça vous coûte
+
+Imaginons que vous ratez 3 clients par semaine à cause de votre absence en ligne. À 200€ de panier moyen, c'est 600€/semaine, soit 2 400€/mois de manque à gagner. Un site vitrine à 399€ se rentabilise dès le premier client.
+
+## La solution
+
+Un site vitrine simple avec vos prestations, vos tarifs, un formulaire de contact et votre numéro de téléphone visible. C'est tout ce qu'il faut. Pas besoin de 50 pages ou de fonctionnalités complexes. L'important c'est d'exister sur Google.
+
+## L'investissement le plus rentable
+
+Pour 399€ + 49€/mois de maintenance, vous êtes visible 24h/24. C'est moins cher qu'une pub dans le journal local, et ça travaille pour vous même quand vous dormez.` },
+
+  { id: "premier-sur-google", title: "Comment apparaître en premier sur Google dans votre ville", tag: "SEO local", color: "#d97706", bg: "#fef3c7", readTime: "6 min", date: "2026-08-28",
+    content: `Quand quelqu'un tape "plombier Lyon" ou "coiffeur Marseille", Google affiche en priorité les professionnels qui ont un site web optimisé et une fiche Google Business. Voici comment y arriver.
+
+## Étape 1 : Avoir un site web optimisé
+
+Votre site doit contenir le nom de votre ville dans le titre, dans les textes, et dans les balises meta. Par exemple : "Électricien à Marseille - Dépannage et installation" plutôt que juste "Électricien".
+
+## Étape 2 : Créer votre fiche Google Business
+
+C'est gratuit et indispensable. Allez sur business.google.com, créez votre fiche avec vos horaires, votre adresse, vos photos, et votre numéro. Les fiches Google Business apparaissent en haut des résultats avec la carte.
+
+## Étape 3 : Obtenir des avis clients
+
+Les avis Google sont le facteur numéro 1 de classement local. Demandez à vos clients satisfaits de vous laisser un avis. 10 avis 5 étoiles et vous passez devant 90% de vos concurrents.
+
+## Étape 4 : Être présent partout
+
+Inscrivez-vous sur PagesJaunes, Yelp, et les annuaires de votre métier. Chaque mention de votre nom + adresse + téléphone renforce votre position sur Google.
+
+## Résultat
+
+Avec ces 4 étapes, vous pouvez passer de invisible à première page de Google en 2-3 mois. C'est exactement ce qu'on configure dans nos offres Sur-Mesure.` },
+
+  { id: "marie-triple-rdv", title: "Comment Marie a triplé ses rendez-vous grâce à son site", tag: "Témoignage", color: "#e91e63", bg: "#fce4ec", readTime: "4 min", date: "2026-08-25",
+    content: `Marie est prothésiste ongulaire à Aix-en-Provence. Avant son site, elle ne travaillait que par bouche à oreille — 8 à 10 clientes par semaine. Aujourd'hui elle en a 25. Voici son histoire.
+
+## Le problème
+
+Marie avait une page Instagram avec 500 abonnées, mais les nouvelles clientes ne la trouvaient pas sur Google. Quand quelqu'un tapait "prothésiste ongulaire Aix-en-Provence", elle n'apparaissait nulle part.
+
+## La solution
+
+On lui a créé un site Sur-Mesure avec :
+- Une galerie photos avant/après de ses réalisations
+- Ses tarifs clairement affichés
+- Un bouton WhatsApp pour prise de RDV directe
+- Son adresse avec Google Maps intégré
+- Ses horaires et disponibilités
+
+## Les résultats
+
+Dès le premier mois, Marie a commencé à recevoir des appels de clientes qui l'avaient trouvée sur Google. Au bout de 3 mois, elle est passée de 8 à 25 clientes par semaine.
+
+## Le secret
+
+Les photos avant/après sur son site sont partagées par ses clientes sur Instagram, ce qui crée un cercle vertueux. Le site alimente les réseaux sociaux, qui alimentent le site.
+
+## Le coût
+
+699€ pour le site + 49€/mois de maintenance. Rentabilisé dès la première semaine avec 2-3 nouvelles clientes.` },
+
+  { id: "site-vs-facebook", title: "Site web vs page Facebook : pourquoi les réseaux sociaux ne suffisent pas", tag: "Comparatif", color: "#2e7d32", bg: "#e8f5e9", readTime: "5 min", date: "2026-08-20",
+    content: `Beaucoup d'artisans pensent qu'une page Facebook ou un compte Instagram suffit pour être visible en ligne. C'est une erreur qui vous coûte des clients.
+
+## Ce que Facebook ne fait pas
+
+Facebook ne vous rend pas visible sur Google. Quand un client tape "plombier Marseille", votre page Facebook n'apparaît pas dans les résultats. Seuls les sites web apparaissent.
+
+## Le problème de l'algorithme
+
+Facebook montre vos publications à 5-10% de vos abonnés seulement. Vous avez 500 abonnés ? Seulement 25 à 50 personnes voient votre post. Et ce chiffre baisse chaque année.
+
+## Vous ne contrôlez rien
+
+Facebook peut supprimer votre page du jour au lendemain. Changement de politique, signalement abusif, bug — et vous perdez tout. Un site web vous appartient.
+
+## L'image professionnelle
+
+Un artisan avec un site web dédié inspire plus confiance qu'un artisan avec juste une page Facebook. C'est un signal de sérieux et de professionnalisme.
+
+## La bonne stratégie
+
+L'idéal c'est les deux : un site web comme base solide (visible sur Google, professionnel, vous appartient) + des réseaux sociaux qui redirigent vers votre site. Le site est la fondation, les réseaux sont la vitrine.` },
+
+  { id: "erreurs-site-web", title: "5 erreurs qui font fuir les clients de votre site", tag: "Pratique", color: "#7c3aed", bg: "#f3e8ff", readTime: "4 min", date: "2026-08-15",
+    content: `Un site web mal conçu fait plus de mal que pas de site du tout. Voici les 5 erreurs les plus courantes et comment les éviter.
+
+## Erreur 1 : Un site qui charge lentement
+
+53% des visiteurs quittent un site qui met plus de 3 secondes à charger. Sur mobile, c'est encore pire. Un site lent = des clients perdus. La solution : un hébergement rapide et des images optimisées.
+
+## Erreur 2 : Pas de numéro de téléphone visible
+
+44% des visiteurs quittent un site s'ils ne trouvent pas de numéro de téléphone. Votre numéro doit être visible en haut de chaque page, cliquable sur mobile.
+
+## Erreur 3 : Pas adapté mobile
+
+60% de vos visiteurs sont sur smartphone. Si votre site ne s'adapte pas à l'écran du téléphone, vous perdez plus de la moitié de vos clients potentiels.
+
+## Erreur 4 : Pas de photos
+
+Un artisan sans photos de ses réalisations, c'est un restaurant sans photos de ses plats. Les clients veulent voir votre travail avant de vous contacter.
+
+## Erreur 5 : Pas de formulaire de contact
+
+Certains clients préfèrent écrire plutôt qu'appeler, surtout en dehors des heures ouvrées. Un formulaire de contact simple capture ces demandes 24h/24.
+
+## La bonne nouvelle
+
+Ces 5 erreurs sont faciles à éviter quand le site est bien conçu dès le départ. C'est exactement ce qu'on fait chez Site Minute — chaque site est rapide, mobile, avec téléphone visible, photos et formulaire.` }
+];
+
 export default function App() {
   const [m, setM] = useState(false);
   const [sel, setSel] = useState([]);
   const [cgv, setCgv] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
+  const [page, setPage] = useState("home");
+  const [selectedArticle, setSelectedArticle] = useState(null);
   const [showRdv, setShowRdv] = useState(false);
   const [chatMessages, setChatMessages] = useState([{ role: "assistant", content: "Bonjour ! Je suis l'assistant Site Minute. Comment puis-je vous aider ?" }]);
   const [chatInput, setChatInput] = useState("");
@@ -189,9 +314,75 @@ export default function App() {
     return () => { observer.disconnect(); document.head.removeChild(style); };
   }, []);
 
+  const renderMarkdown = (content) => {
+    return content.trim().split("\n").map((line, i) => {
+      if (line.startsWith("## ")) return <h2 key={i} style={{ fontSize: 20, fontWeight: 800, color: "#0f172a", margin: "28px 0 10px" }}>{line.replace("## ", "")}</h2>;
+      if (line.trim() === "") return null;
+      return <p key={i} style={{ fontSize: 14, color: "#475569", margin: "6px 0", lineHeight: 1.8 }}>{line}</p>;
+    });
+  };
+
   const toggle = (name, price) => setSel(p => p.find(o => o.name === name) ? p.filter(o => o.name !== name) : [...p, { name, price }]);
   const total = sel.reduce((s, o) => s + o.price, 0);
   const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
+  // BLOG PAGE
+  if (page === "blog") {
+    return (
+      <div style={{ minHeight: "100vh", background: "#fff", color: "#0f172a", fontFamily: "'Inter', -apple-system, sans-serif" }}>
+        <nav style={{ maxWidth: 1100, margin: "0 auto", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div onClick={() => setPage("home")} style={{ fontSize: 22, fontWeight: 900, cursor: "pointer" }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
+          <button onClick={() => setPage("home")} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "8px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: "pointer" }}>Retour</button>
+        </nav>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "40px 20px 60px" }}>
+          <h1 style={{ fontSize: m ? 28 : 36, fontWeight: 900, margin: "0 0 8px", textAlign: "center" }}>Blog Site Minute</h1>
+          <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 40px", textAlign: "center" }}>Conseils pour développer votre présence en ligne</p>
+          {BLOG_FULL.map((article) => (
+            <div key={article.id} onClick={() => { setSelectedArticle(article); setPage("article"); }} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 24, marginBottom: 14, cursor: "pointer", transition: "all 0.2s" }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3b82f6"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                <span style={{ background: article.bg, color: article.color, padding: "3px 10px", borderRadius: 6, fontSize: 11, fontWeight: 600 }}>{article.tag}</span>
+                <span style={{ fontSize: 12, color: "#94a3b8" }}>{article.readTime}</span>
+              </div>
+              <h3 style={{ fontSize: 18, fontWeight: 800, margin: "0 0 6px" }}>{article.title}</h3>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ fontSize: 12, color: "#94a3b8" }}>{article.date}</span>
+                <span style={{ fontSize: 13, color: "#3b82f6", fontWeight: 600 }}>Lire →</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // ARTICLE PAGE
+  if (page === "article" && selectedArticle) {
+    return (
+      <div style={{ minHeight: "100vh", background: "#fff", color: "#0f172a", fontFamily: "'Inter', -apple-system, sans-serif" }}>
+        <nav style={{ maxWidth: 1100, margin: "0 auto", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div onClick={() => setPage("home")} style={{ fontSize: 22, fontWeight: 900, cursor: "pointer" }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
+          <button onClick={() => setPage("blog")} style={{ background: "none", border: "1px solid #e2e8f0", color: "#0f172a", padding: "8px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: "pointer" }}>← Blog</button>
+        </nav>
+        <div style={{ maxWidth: 700, margin: "0 auto", padding: "20px 20px 60px" }}>
+          <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 16, flexWrap: "wrap" }}>
+            <span style={{ background: selectedArticle.bg, color: selectedArticle.color, padding: "3px 10px", borderRadius: 6, fontSize: 11, fontWeight: 600 }}>{selectedArticle.tag}</span>
+            <span style={{ fontSize: 12, color: "#94a3b8" }}>{selectedArticle.date}</span>
+            <span style={{ fontSize: 12, color: "#94a3b8" }}>{selectedArticle.readTime}</span>
+          </div>
+          <h1 style={{ fontSize: m ? 26 : 34, fontWeight: 900, margin: "0 0 24px", lineHeight: 1.2 }}>{selectedArticle.title}</h1>
+          <article>{renderMarkdown(selectedArticle.content)}</article>
+          <div style={{ background: "#0f172a", borderRadius: 16, padding: 28, textAlign: "center", marginTop: 32 }}>
+            <h3 style={{ color: "#fff", fontSize: 20, fontWeight: 800, margin: "0 0 8px" }}>Besoin d'un site pour votre activité ?</h3>
+            <p style={{ color: "#94a3b8", fontSize: 14, margin: "0 0 16px" }}>À partir de 399€, livré en 48h.</p>
+            <button onClick={() => { setPage("home"); setTimeout(() => go("contact"), 100); }} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "12px 28px", borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Demander un devis gratuit</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ minHeight: "100vh", background: "#fff", color: "#0f172a", fontFamily: "'Inter', -apple-system, sans-serif" }}>
@@ -200,7 +391,7 @@ export default function App() {
       <nav style={{ maxWidth: 1100, margin: "0 auto", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ fontSize: 22, fontWeight: 900 }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
         <div style={{ display: "flex", gap: m ? 8 : 20, alignItems: "center" }}>
-          {!m && <><span onClick={() => go("metiers")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Métiers</span><span onClick={() => go("offres")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Offres</span><span onClick={() => go("options")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Options</span><span onClick={() => go("blog")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Blog</span><span onClick={() => setShowRdv(true)} style={{ color: "#64748b", fontSize: 14, cursor: "pointer" }}>RDV</span></>}
+          {!m && <><span onClick={() => go("metiers")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Métiers</span><span onClick={() => go("offres")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Offres</span><span onClick={() => go("options")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Options</span><span onClick={() => setPage("blog")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Blog</span><span onClick={() => setShowRdv(true)} style={{ color: "#64748b", fontSize: 14, cursor: "pointer" }}>RDV</span></>}
           <button onClick={() => m ? setShowRdv(true) : go("contact")} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "8px 16px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap" }}>{m ? "📅 RDV" : "Devis gratuit"}</button>
         </div>
       </nav>
