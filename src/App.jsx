@@ -60,7 +60,7 @@ const TEMOIGNAGES = [
 
 
 const BLOG_FULL = [
-  { id: "clients-sans-site", title: "Pourquoi 72% des clients ne vous appellent jamais sans site web", tag: "Guide", color: "#3b82f6", bg: "#eff6ff", readTime: "5 min", date: "2026-09-01",
+  { id: "clients-sans-site", image: "/blog-clients.jpg", title: "Pourquoi 72% des clients ne vous appellent jamais sans site web", tag: "Guide", color: "#3b82f6", bg: "#eff6ff", readTime: "5 min", date: "2026-09-01",
     content: `En 2026, le premier réflexe d'un client qui cherche un artisan c'est Google. Pas les Pages Jaunes, pas le bouche à oreille. Si vous n'avez pas de site, vous êtes invisible pour 3 clients potentiels sur 4.
 
 ## Les chiffres qui parlent
@@ -79,7 +79,7 @@ Un site vitrine simple avec vos prestations, vos tarifs, un formulaire de contac
 
 Pour 399€ + 49€/mois de maintenance, vous êtes visible 24h/24. C'est moins cher qu'une pub dans le journal local, et ça travaille pour vous même quand vous dormez.` },
 
-  { id: "premier-sur-google", title: "Comment apparaître en premier sur Google dans votre ville", tag: "SEO local", color: "#d97706", bg: "#fef3c7", readTime: "6 min", date: "2026-08-28",
+  { id: "premier-sur-google", image: "/blog-google.jpg", title: "Comment apparaître en premier sur Google dans votre ville", tag: "SEO local", color: "#d97706", bg: "#fef3c7", readTime: "6 min", date: "2026-08-28",
     content: `Quand quelqu'un tape "plombier Lyon" ou "coiffeur Marseille", Google affiche en priorité les professionnels qui ont un site web optimisé et une fiche Google Business. Voici comment y arriver.
 
 ## Étape 1 : Avoir un site web optimisé
@@ -102,7 +102,7 @@ Inscrivez-vous sur PagesJaunes, Yelp, et les annuaires de votre métier. Chaque 
 
 Avec ces 4 étapes, vous pouvez passer de invisible à première page de Google en 2-3 mois. C'est exactement ce qu'on configure dans nos offres Sur-Mesure.` },
 
-  { id: "marie-triple-rdv", title: "Comment Marie a triplé ses rendez-vous grâce à son site", tag: "Témoignage", color: "#e91e63", bg: "#fce4ec", readTime: "4 min", date: "2026-08-25",
+  { id: "marie-triple-rdv", image: "/blog-marie.jpg", title: "Comment Marie a triplé ses rendez-vous grâce à son site", tag: "Témoignage", color: "#e91e63", bg: "#fce4ec", readTime: "4 min", date: "2026-08-25",
     content: `Marie est prothésiste ongulaire à Aix-en-Provence. Avant son site, elle ne travaillait que par bouche à oreille — 8 à 10 clientes par semaine. Aujourd'hui elle en a 25. Voici son histoire.
 
 ## Le problème
@@ -130,7 +130,7 @@ Les photos avant/après sur son site sont partagées par ses clientes sur Instag
 
 699€ pour le site + 49€/mois de maintenance. Rentabilisé dès la première semaine avec 2-3 nouvelles clientes.` },
 
-  { id: "site-vs-facebook", title: "Site web vs page Facebook : pourquoi les réseaux sociaux ne suffisent pas", tag: "Comparatif", color: "#2e7d32", bg: "#e8f5e9", readTime: "5 min", date: "2026-08-20",
+  { id: "site-vs-facebook", image: "/blog-facebook.jpg", title: "Site web vs page Facebook : pourquoi les réseaux sociaux ne suffisent pas", tag: "Comparatif", color: "#2e7d32", bg: "#e8f5e9", readTime: "5 min", date: "2026-08-20",
     content: `Beaucoup d'artisans pensent qu'une page Facebook ou un compte Instagram suffit pour être visible en ligne. C'est une erreur qui vous coûte des clients.
 
 ## Ce que Facebook ne fait pas
@@ -153,7 +153,7 @@ Un artisan avec un site web dédié inspire plus confiance qu'un artisan avec ju
 
 L'idéal c'est les deux : un site web comme base solide (visible sur Google, professionnel, vous appartient) + des réseaux sociaux qui redirigent vers votre site. Le site est la fondation, les réseaux sont la vitrine.` },
 
-  { id: "erreurs-site-web", title: "5 erreurs qui font fuir les clients de votre site", tag: "Pratique", color: "#7c3aed", bg: "#f3e8ff", readTime: "4 min", date: "2026-08-15",
+  { id: "erreurs-site-web", image: "/blog-erreurs.jpg", title: "5 erreurs qui font fuir les clients de votre site", tag: "Pratique", color: "#7c3aed", bg: "#f3e8ff", readTime: "4 min", date: "2026-08-15",
     content: `Un site web mal conçu fait plus de mal que pas de site du tout. Voici les 5 erreurs les plus courantes et comment les éviter.
 
 ## Erreur 1 : Un site qui charge lentement
@@ -338,10 +338,12 @@ export default function App() {
           <h1 style={{ fontSize: m ? 28 : 36, fontWeight: 900, margin: "0 0 8px", textAlign: "center" }}>Blog Site Minute</h1>
           <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 40px", textAlign: "center" }}>Conseils pour développer votre présence en ligne</p>
           {BLOG_FULL.map((article) => (
-            <div key={article.id} onClick={() => { setSelectedArticle(article); setPage("article"); }} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 24, marginBottom: 14, cursor: "pointer", transition: "all 0.2s" }}
+            <div key={article.id} onClick={() => { setSelectedArticle(article); setPage("article"); }} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, marginBottom: 14, cursor: "pointer", transition: "all 0.2s", overflow: "hidden" }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3b82f6"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; }}
             >
+              {article.image && <img src={article.image} alt={article.title} style={{ width: "100%", height: 180, objectFit: "cover" }} />}
+              <div style={{ padding: 24 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
                 <span style={{ background: article.bg, color: article.color, padding: "3px 10px", borderRadius: 6, fontSize: 11, fontWeight: 600 }}>{article.tag}</span>
                 <span style={{ fontSize: 12, color: "#94a3b8" }}>{article.readTime}</span>
@@ -350,6 +352,7 @@ export default function App() {
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontSize: 12, color: "#94a3b8" }}>{article.date}</span>
                 <span style={{ fontSize: 13, color: "#3b82f6", fontWeight: 600 }}>Lire →</span>
+              </div>
               </div>
             </div>
           ))}
@@ -372,7 +375,8 @@ export default function App() {
             <span style={{ fontSize: 12, color: "#94a3b8" }}>{selectedArticle.date}</span>
             <span style={{ fontSize: 12, color: "#94a3b8" }}>{selectedArticle.readTime}</span>
           </div>
-          <h1 style={{ fontSize: m ? 26 : 34, fontWeight: 900, margin: "0 0 24px", lineHeight: 1.2 }}>{selectedArticle.title}</h1>
+          <h1 style={{ fontSize: m ? 26 : 34, fontWeight: 900, margin: "0 0 20px", lineHeight: 1.2 }}>{selectedArticle.title}</h1>
+          {selectedArticle.image && <img src={selectedArticle.image} alt={selectedArticle.title} style={{ width: "100%", height: 280, objectFit: "cover", borderRadius: 16, marginBottom: 24 }} />}
           <article>{renderMarkdown(selectedArticle.content)}</article>
           <div style={{ background: "#0f172a", borderRadius: 16, padding: 28, textAlign: "center", marginTop: 32 }}>
             <h3 style={{ color: "#fff", fontSize: 20, fontWeight: 800, margin: "0 0 8px" }}>Besoin d'un site pour votre activité ?</h3>
