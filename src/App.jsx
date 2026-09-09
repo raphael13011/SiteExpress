@@ -60,125 +60,218 @@ const TEMOIGNAGES = [
 
 
 const BLOG_FULL = [
-  { id: "clients-sans-site", image: "/blog-clients.jpg", title: "Pourquoi 72% des clients ne vous appellent jamais sans site web", tag: "Guide", color: "#3b82f6", bg: "#eff6ff", readTime: "5 min", date: "2026-09-01",
-    content: `En 2026, le premier réflexe d'un client qui cherche un artisan c'est Google. Pas les Pages Jaunes, pas le bouche à oreille. Si vous n'avez pas de site, vous êtes invisible pour 3 clients potentiels sur 4.
+  { id: "clients-sans-site", image: "/blog-clients.jpg", title: "Pourquoi 72% des clients ne vous appellent jamais sans site web", tag: "Guide", color: "#3b82f6", bg: "#eff6ff", readTime: "8 min", date: "2026-09-01",
+    content: `J'ai un pote plombier à Marseille. Un bon. Le genre de mec qui bosse proprement, qui arrive à l'heure, qui nettoie derrière lui. Bref, le rêve pour un client. Sauf que pendant des années, il a galéré à remplir son planning. Il bossait uniquement au bouche à oreille et ça suffisait pas toujours.
 
-## Les chiffres qui parlent
+Un jour je lui ai demandé : "T'as un site web ?". Il m'a regardé comme si je lui parlais chinois. "Pour quoi faire ? Mes clients me connaissent." Ouais, ses clients actuels le connaissent. Mais tous ceux qui tapent "plombier Marseille" sur Google à 22h parce que leur chauffe-eau vient de lâcher ? Eux, ils le connaissent pas.
 
-Une étude IFOP montre que 72% des Français ne contactent jamais un professionnel qui n'a pas de site web. Pas parce que vous êtes mauvais — parce qu'ils ne vous trouvent pas. Quand quelqu'un tape "électricien Marseille" sur Google, seuls les pros avec un site apparaissent.
+## Le réflexe Google
 
-## Ce que ça vous coûte
+En 2026, c'est devenu un automatisme. Votre lave-vaisselle tombe en panne ? Google. Vous cherchez une coiffeuse pour votre mariage ? Google. Besoin d'un électricien pour une mise aux normes ? Google.
 
-Imaginons que vous ratez 3 clients par semaine à cause de votre absence en ligne. À 200€ de panier moyen, c'est 600€/semaine, soit 2 400€/mois de manque à gagner. Un site vitrine à 399€ se rentabilise dès le premier client.
+Une étude IFOP le confirme : 72% des Français ne contactent jamais un professionnel qui n'a pas de présence en ligne. C'est pas qu'ils vous font pas confiance. C'est qu'ils ne savent même pas que vous existez.
 
-## La solution
+Pensez-y deux secondes. Sur 10 personnes qui cherchent votre métier dans votre ville, 7 ne vous contacteront jamais si vous n'avez pas de site. Sept clients potentiels perdus. Chaque semaine. Chaque mois.
 
-Un site vitrine simple avec vos prestations, vos tarifs, un formulaire de contact et votre numéro de téléphone visible. C'est tout ce qu'il faut. Pas besoin de 50 pages ou de fonctionnalités complexes. L'important c'est d'exister sur Google.
+## "Mais j'ai une page Facebook"
 
-## L'investissement le plus rentable
+J'entends ça tout le temps. Et je comprends, c'est gratuit, c'est facile. Mais Facebook c'est pas Google. Quand quelqu'un tape "électricien Aix-en-Provence" sur Google, votre page Facebook n'apparaît quasiment jamais dans les résultats. Ce qui apparaît, ce sont les sites web.
 
-Pour 399€ + 49€/mois de maintenance, vous êtes visible 24h/24. C'est moins cher qu'une pub dans le journal local, et ça travaille pour vous même quand vous dormez.` },
+Et puis il y a un truc que beaucoup de gens ignorent : Facebook ne montre vos publications qu'à 5 à 10% de vos abonnés. Vous avez 400 abonnés ? Seulement 20 à 40 personnes voient votre post. L'algorithme décide pour vous.
 
-  { id: "premier-sur-google", image: "/blog-google.jpg", title: "Comment apparaître en premier sur Google dans votre ville", tag: "SEO local", color: "#d97706", bg: "#fef3c7", readTime: "6 min", date: "2026-08-28",
-    content: `Quand quelqu'un tape "plombier Lyon" ou "coiffeur Marseille", Google affiche en priorité les professionnels qui ont un site web optimisé et une fiche Google Business. Voici comment y arriver.
+## Combien ça vous coûte vraiment
 
-## Étape 1 : Avoir un site web optimisé
+Faisons un calcul simple. Disons que vous ratez 3 clients par semaine parce qu'ils ne vous trouvent pas en ligne. Si votre intervention moyenne vaut 200€, ça fait 600€ par semaine de manque à gagner. Sur un mois, c'est 2 400€. Sur un an, presque 30 000€.
 
-Votre site doit contenir le nom de votre ville dans le titre, dans les textes, et dans les balises meta. Par exemple : "Électricien à Marseille - Dépannage et installation" plutôt que juste "Électricien".
+Maintenant, un site web vitrine coûte 399€ à créer. La maintenance c'est 49€ par mois. Faites le calcul : votre site se rembourse dès le premier client. Tout le reste, c'est du bonus.
 
-## Étape 2 : Créer votre fiche Google Business
+## Ce qu'il faut sur votre site (et rien de plus)
 
-C'est gratuit et indispensable. Allez sur business.google.com, créez votre fiche avec vos horaires, votre adresse, vos photos, et votre numéro. Les fiches Google Business apparaissent en haut des résultats avec la carte.
+Pas besoin d'un site de 50 pages avec des animations dans tous les sens. Les clients veulent 5 choses, c'est tout :
 
-## Étape 3 : Obtenir des avis clients
+Vos prestations. Qu'est-ce que vous faites exactement ? Dépannage, installation, rénovation ? Soyez précis.
 
-Les avis Google sont le facteur numéro 1 de classement local. Demandez à vos clients satisfaits de vous laisser un avis. 10 avis 5 étoiles et vous passez devant 90% de vos concurrents.
+Votre zone d'intervention. Vous bossez sur Marseille et 30 km autour ? Dites-le clairement. C'est aussi ce qui vous fait remonter sur Google.
 
-## Étape 4 : Être présent partout
+Des photos de vos réalisations. Un artisan sans photos, c'est comme un restaurant sans carte. Les gens veulent voir votre travail.
 
-Inscrivez-vous sur PagesJaunes, Yelp, et les annuaires de votre métier. Chaque mention de votre nom + adresse + téléphone renforce votre position sur Google.
+Votre numéro de téléphone. Visible, en gros, cliquable sur mobile. Si un client doit chercher 30 secondes pour trouver comment vous joindre, il part.
 
-## Résultat
+Un formulaire de contact. Pour ceux qui préfèrent écrire plutôt qu'appeler, surtout le soir ou le week-end. Ce formulaire travaille pour vous même à 3h du matin.
 
-Avec ces 4 étapes, vous pouvez passer de invisible à première page de Google en 2-3 mois. C'est exactement ce qu'on configure dans nos offres Sur-Mesure.` },
+## Mon pote plombier, la suite
 
-  { id: "marie-triple-rdv", image: "/blog-marie.jpg", title: "Comment Marie a triplé ses rendez-vous grâce à son site", tag: "Témoignage", color: "#e91e63", bg: "#fce4ec", readTime: "4 min", date: "2026-08-25",
-    content: `Marie est prothésiste ongulaire à Aix-en-Provence. Avant son site, elle ne travaillait que par bouche à oreille — 8 à 10 clientes par semaine. Aujourd'hui elle en a 25. Voici son histoire.
+Je lui ai créé son site en deux jours. Rien de compliqué : ses prestations, des photos de chantiers, son 06 bien visible, un formulaire. On a rajouté Google Maps pour que les gens voient qu'il est à côté de chez eux.
 
-## Le problème
+Premier mois : 4 appels via le site. Deuxième mois : 8. Au bout de 6 mois il refusait des chantiers. Aujourd'hui il me dit que la moitié de ses nouveaux clients viennent de Google.
 
-Marie avait une page Instagram avec 500 abonnées, mais les nouvelles clientes ne la trouvaient pas sur Google. Quand quelqu'un tapait "prothésiste ongulaire Aix-en-Provence", elle n'apparaissait nulle part.
+Pour 399€, c'est le meilleur investissement qu'il ait jamais fait. Et il le sait.` },
 
-## La solution
+  { id: "premier-sur-google", image: "/blog-google.jpg", title: "Comment apparaître en premier sur Google dans votre ville", tag: "SEO local", color: "#d97706", bg: "#fef3c7", readTime: "9 min", date: "2026-08-28",
+    content: `Quand vous cherchez un restaurant, qu'est-ce que vous faites ? Vous sortez votre téléphone et vous tapez "restaurant italien près de moi". En 0,3 secondes, Google vous donne une liste. Vous cliquez sur le premier ou le deuxième résultat. Vous regardez les avis. Vous y allez.
 
-On lui a créé un site Sur-Mesure avec :
-- Une galerie photos avant/après de ses réalisations
-- Ses tarifs clairement affichés
-- Un bouton WhatsApp pour prise de RDV directe
-- Son adresse avec Google Maps intégré
-- Ses horaires et disponibilités
+Vos clients font exactement la même chose avec votre métier. "Plombier Lyon 7", "coiffeuse Aix-en-Provence", "électricien Aubagne urgence". Et la question c'est : est-ce que c'est vous qui apparaissez en premier ? Ou est-ce que c'est votre concurrent d'en face ?
 
-## Les résultats
+## Comment Google décide qui passe en premier
 
-Dès le premier mois, Marie a commencé à recevoir des appels de clientes qui l'avaient trouvée sur Google. Au bout de 3 mois, elle est passée de 8 à 25 clientes par semaine.
+Google c'est pas magique. C'est un algorithme qui classe les résultats selon des critères précis. Et la bonne nouvelle, c'est que ces critères sont connus. Pas besoin d'être informaticien pour les comprendre.
 
-## Le secret
+Pour les recherches locales — et c'est ça qui nous intéresse — Google regarde trois choses. La pertinence : est-ce que votre site parle bien du service recherché ? La distance : est-ce que vous êtes géographiquement proche de la personne qui cherche ? Et la notoriété : est-ce que d'autres sites, annuaires, avis parlent de vous ?
 
-Les photos avant/après sur son site sont partagées par ses clientes sur Instagram, ce qui crée un cercle vertueux. Le site alimente les réseaux sociaux, qui alimentent le site.
+## Étape 1 : Votre fiche Google Business, c'est non négociable
 
-## Le coût
+Avant même de parler de site web, il y a un truc gratuit qui prend 20 minutes et qui change tout : votre fiche Google Business. C'est ce qui apparaît dans le petit encadré avec la carte quand vous tapez un commerce sur Google. Le truc avec les étoiles, les horaires, le numéro.
 
-699€ pour le site + 49€/mois de maintenance. Rentabilisé dès la première semaine avec 2-3 nouvelles clientes.` },
+Allez sur business.google.com. Créez votre fiche. Mettez votre vraie adresse (ou votre zone d'intervention si vous vous déplacez). Ajoutez des photos — pas des photos pourries prises à l'arrache, des vraies photos de votre travail. Vos horaires. Votre numéro.
 
-  { id: "site-vs-facebook", image: "/blog-facebook.jpg", title: "Site web vs page Facebook : pourquoi les réseaux sociaux ne suffisent pas", tag: "Comparatif", color: "#2e7d32", bg: "#e8f5e9", readTime: "5 min", date: "2026-08-20",
-    content: `Beaucoup d'artisans pensent qu'une page Facebook ou un compte Instagram suffit pour être visible en ligne. C'est une erreur qui vous coûte des clients.
+Et surtout : demandez des avis. Les avis Google c'est le nerf de la guerre. Un artisan avec 15 avis à 4,8 étoiles passe systématiquement devant un artisan sans avis, même si ce dernier bosse mieux. C'est injuste, mais c'est comme ça.
 
-## Ce que Facebook ne fait pas
+## Étape 2 : Un site web avec les bons mots au bon endroit
 
-Facebook ne vous rend pas visible sur Google. Quand un client tape "plombier Marseille", votre page Facebook n'apparaît pas dans les résultats. Seuls les sites web apparaissent.
+Avoir un site c'est bien. Avoir un site que Google comprend c'est mieux. Et pour ça, il faut parler le langage de Google.
 
-## Le problème de l'algorithme
+Concrètement, ça veut dire mettre votre ville dans le titre de votre site. Pas "Entreprise Martin" mais "Entreprise Martin — Électricien à Marseille 13008". Ça veut dire mentionner vos quartiers d'intervention dans vos textes : "Nous intervenons dans tout le 8ème arrondissement, à la Plage du Prado, Sainte-Anne, Bonneveine...".
 
-Facebook montre vos publications à 5-10% de vos abonnés seulement. Vous avez 500 abonnés ? Seulement 25 à 50 personnes voient votre post. Et ce chiffre baisse chaque année.
+Ça veut dire aussi avoir une page par service si possible. Une page "Dépannage électrique", une page "Installation tableau électrique", une page "Mise aux normes NF C 15-100". Chaque page est une porte d'entrée supplémentaire sur Google.
 
-## Vous ne contrôlez rien
+## Étape 3 : Les annuaires, ça compte encore
 
-Facebook peut supprimer votre page du jour au lendemain. Changement de politique, signalement abusif, bug — et vous perdez tout. Un site web vous appartient.
+PagesJaunes, Yelp, les annuaires de votre fédération professionnelle. Chaque fois que votre nom, adresse et téléphone apparaissent sur un autre site, Google se dit "tiens, ce pro est connu, il est légitime". En SEO on appelle ça des citations locales.
+
+C'est pas le truc le plus excitant du monde, mais 30 minutes à vous inscrire sur 5-6 annuaires et c'est fait une bonne fois pour toutes. Et ça booste votre classement.
+
+## Étape 4 : Le contenu qui attire
+
+Un blog sur votre site c'est un bonus énorme. Pas un blog où vous racontez vos vacances — un blog utile. "Comment choisir son chauffe-eau en 2026", "Les 5 pannes électriques les plus fréquentes", "Prix d'une rénovation salle de bain à Marseille".
+
+Ces articles attirent des gens qui cherchent des réponses. Ils arrivent sur votre site, découvrent vos services, et certains deviennent clients. C'est ce qu'on appelle le référencement naturel, et c'est le trafic le plus rentable qui existe parce qu'il est gratuit.
+
+## Combien de temps pour voir des résultats ?
+
+Soyons honnêtes. Le SEO c'est pas instantané. Comptez 2 à 3 mois pour commencer à apparaître sur la première page de Google sur des requêtes locales. Parfois plus vite si la concurrence est faible dans votre ville.
+
+Mais une fois que vous y êtes, ça dure. Contrairement à une pub qui s'arrête dès que vous arrêtez de payer, votre position Google reste tant que vous maintenez votre site et vos avis.` },
+
+  { id: "marie-triple-rdv", image: "/blog-marie.jpg", title: "Comment Marie a triplé ses rendez-vous grâce à son site", tag: "Témoignage", color: "#e91e63", bg: "#fce4ec", readTime: "7 min", date: "2026-08-25",
+    content: `Je vais vous raconter l'histoire de Marie. C'est pas une étude de cas à la con sortie d'un bouquin de marketing. C'est une vraie personne, une prothésiste ongulaire installée à Aix-en-Provence depuis 4 ans.
+
+## Le point de départ
+
+Quand Marie m'a contacté, elle avait une clientèle fidèle mais stagnante. 8 à 10 clientes par semaine, uniquement du bouche à oreille et quelques abonnées Instagram. Elle payait 600€ de loyer pour son petit local et certaines semaines elle couvrait à peine ses charges.
+
+Son problème c'était pas la qualité de son travail — ses ongles sont magnifiques, elle a un vrai talent. Son problème c'est que personne ne la trouvait en dehors de son cercle. Quand une fille tapait "prothésiste ongulaire Aix-en-Provence" sur Google, Marie n'existait pas.
+
+## Ce qu'on a mis en place
+
+On lui a créé un site simple mais efficace. Pas un truc avec 45 pages et des animations. Un site propre avec exactement ce dont elle avait besoin.
+
+D'abord, une galerie photos. C'est le nerf de la guerre pour une prothésiste ongulaire. On a pris ses plus belles réalisations — les baby boomer, les nail art, les French manucure — et on les a mises en avant avec des photos nettes sur fond propre. Avant/après quand c'était pertinent.
+
+Ensuite, ses tarifs. Clairement affichés. Manucure simple, semi-permanent, gel, nail art, dépose. Les clientes détestent devoir appeler juste pour connaître un prix. Quand c'est sur le site, elles arrivent déjà décidées.
+
+Un bouton WhatsApp bien visible. Parce que sa clientèle c'est des femmes de 20 à 45 ans et elles préfèrent envoyer un message que passer un coup de fil. Le bouton ouvre directement la conversation WhatsApp avec un message pré-rempli.
+
+Google Maps intégré pour montrer où elle est. Et ses horaires bien visibles.
+
+## Le déclic
+
+Le premier mois, elle a reçu 6 appels de nouvelles clientes qui l'avaient trouvée sur Google. Des filles qui habitaient le quartier et qui ne savaient même pas qu'elle existait. Au deuxième mois, on est passé à 12. Et au troisième, elle a commencé à refuser des créneaux.
+
+Aujourd'hui Marie tourne à 25 clientes par semaine. Elle a même augmenté ses tarifs de 15% parce que la demande dépasse l'offre. Son chiffre d'affaires a plus que doublé.
+
+## Le truc qu'on avait pas prévu
+
+Ce qui a vraiment fait exploser son trafic, c'est un effet boule de neige qu'on n'avait pas anticipé. Ses clientes prennent des photos de leurs ongles et les postent sur Instagram en taguant Marie. Ces posts renvoient vers son site. Le site renvoie vers Instagram. C'est un cercle vertueux.
+
+Et les avis Google. On lui a dit de demander à chaque cliente satisfaite de laisser un avis. En 3 mois elle avait 35 avis à 4,9 étoiles. Sur Aix-en-Provence, c'est imbattable. Elle apparaît systématiquement dans les 3 premiers résultats Google Maps.
+
+## Ce que ça lui a coûté
+
+699€ pour le site sur-mesure. 49€ par mois pour la maintenance. Total première année : 1 287€. Son gain supplémentaire la première année : environ 15 000€ de chiffre d'affaires en plus. Je vous laisse faire le calcul du retour sur investissement.` },
+
+  { id: "site-vs-facebook", image: "/blog-facebook.jpg", title: "Site web vs page Facebook : pourquoi les réseaux sociaux ne suffisent pas", tag: "Comparatif", color: "#2e7d32", bg: "#e8f5e9", readTime: "7 min", date: "2026-08-20",
+    content: `La semaine dernière un peintre en bâtiment m'a dit : "Pourquoi je paierais pour un site alors que j'ai déjà ma page Facebook ?". C'est une question légitime. Et la réponse est simple : parce que Facebook et un site web ne font pas du tout le même travail.
+
+## Facebook c'est pas Google
+
+C'est la confusion la plus courante. Les gens pensent que s'ils sont sur Facebook, ils sont visibles "sur internet". Techniquement oui. En pratique, non.
+
+Quand un client potentiel a besoin d'un peintre, il ouvre Google et tape "peintre en bâtiment Marseille". Il ne va pas sur Facebook pour chercher. Les résultats Google affichent des sites web, pas des pages Facebook. Votre page Facebook est donc invisible au moment exact où le client cherche votre service.
+
+C'est comme avoir une belle vitrine dans une rue où personne ne passe. Votre vitrine est super, mais elle est dans la mauvaise rue.
+
+## L'algorithme travaille contre vous
+
+Même pour vos propres abonnés, Facebook vous rend de moins en moins visible. En 2026, une publication organique touche en moyenne 5 à 8% de vos abonnés. Vous avez 500 abonnés ? Seulement 25 à 40 personnes voient votre post. Et ce chiffre baisse chaque année parce que Facebook veut vous pousser à payer de la pub.
+
+Avec un site web, c'est l'inverse. Plus votre site est ancien et bien référencé, plus Google vous met en avant. Gratuitement. Pas besoin de sortir la carte bleue tous les mois.
+
+## Vous ne possédez rien sur Facebook
+
+Ça c'est le point que personne ne réalise avant qu'il soit trop tard. Votre page Facebook ne vous appartient pas. Elle appartient à Meta. Et Meta peut la supprimer quand il veut, sans prévenir.
+
+J'ai vu ça arriver. Un artisan qui avait 2 000 abonnés, des centaines de photos de ses réalisations, des dizaines d'avis. Un matin : page désactivée. Motif : "non-respect des conditions d'utilisation". Il a jamais su ce qu'il avait fait de mal. Il a tout perdu.
+
+Un site web vous appartient. Le code, les textes, les photos, le nom de domaine. Si demain votre hébergeur fait faillite, vous prenez vos fichiers et vous allez ailleurs. C'est à vous.
 
 ## L'image professionnelle
 
-Un artisan avec un site web dédié inspire plus confiance qu'un artisan avec juste une page Facebook. C'est un signal de sérieux et de professionnalisme.
+Soyons honnêtes deux secondes. Quand vous recevez un devis d'un artisan et que vous voulez vérifier s'il est sérieux, qu'est-ce qui vous inspire le plus confiance ? Un lien vers une page Facebook avec une photo de profil pixelisée et le dernier post qui date de 6 mois ? Ou un site web propre avec ses réalisations, ses tarifs, ses certifications ?
 
-## La bonne stratégie
+Un site web dit "je suis un professionnel établi". Une page Facebook dit "je fais ça sur le côté". C'est pas forcément vrai, mais c'est la perception.
 
-L'idéal c'est les deux : un site web comme base solide (visible sur Google, professionnel, vous appartient) + des réseaux sociaux qui redirigent vers votre site. Le site est la fondation, les réseaux sont la vitrine.` },
+## La bonne stratégie : les deux, mais dans le bon ordre
 
-  { id: "erreurs-site-web", image: "/blog-erreurs.jpg", title: "5 erreurs qui font fuir les clients de votre site", tag: "Pratique", color: "#7c3aed", bg: "#f3e8ff", readTime: "4 min", date: "2026-08-15",
-    content: `Un site web mal conçu fait plus de mal que pas de site du tout. Voici les 5 erreurs les plus courantes et comment les éviter.
+Le site web c'est votre maison. C'est la base, le truc solide qui vous appartient et qui bosse pour vous 24h/24 sur Google. Les réseaux sociaux c'est le mégaphone : vous y partagez vos réalisations, vos coulisses, votre quotidien. Mais tout doit ramener vers le site.
 
-## Erreur 1 : Un site qui charge lentement
+Un post Instagram de vos réalisations avec "Lien dans la bio → monsite.fr". Un partage Facebook de votre dernier article de blog. Le site est le centre, les réseaux sont les satellites.` },
 
-53% des visiteurs quittent un site qui met plus de 3 secondes à charger. Sur mobile, c'est encore pire. Un site lent = des clients perdus. La solution : un hébergement rapide et des images optimisées.
+  { id: "erreurs-site-web", image: "/blog-erreurs.jpg", title: "5 erreurs qui font fuir les clients de votre site", tag: "Pratique", color: "#7c3aed", bg: "#f3e8ff", readTime: "8 min", date: "2026-08-15",
+    content: `Un mauvais site web c'est pire que pas de site du tout. Au moins quand vous n'avez pas de site, le client ne se fait pas d'opinion. Mais un site lent, moche ou mal foutu, ça envoie un message très clair : "ce professionnel n'est pas sérieux". Voici les 5 erreurs que je vois le plus souvent.
 
-## Erreur 2 : Pas de numéro de téléphone visible
+## Erreur 1 : Votre site met 10 secondes à charger
 
-44% des visiteurs quittent un site s'ils ne trouvent pas de numéro de téléphone. Votre numéro doit être visible en haut de chaque page, cliquable sur mobile.
+Vous savez combien de temps un visiteur attend avant de partir ? Trois secondes. Pas trente. Pas dix. Trois. Au-delà, 53% des gens ferment la page et vont chez votre concurrent.
 
-## Erreur 3 : Pas adapté mobile
+Et devinez quoi, le premier site de votre concurrent charge en 2 secondes parce qu'il a été fait correctement. Pendant que votre site affiche encore un écran blanc, le client est déjà en train de l'appeler.
 
-60% de vos visiteurs sont sur smartphone. Si votre site ne s'adapte pas à l'écran du téléphone, vous perdez plus de la moitié de vos clients potentiels.
+Les causes les plus fréquentes : des images de 5 Mo prises directement depuis l'appareil photo sans les compresser, un hébergement low-cost qui rame, du code mal optimisé. Des trucs faciles à corriger quand le site est fait par quelqu'un qui sait ce qu'il fait.
 
-## Erreur 4 : Pas de photos
+## Erreur 2 : Votre numéro de téléphone joue à cache-cache
 
-Un artisan sans photos de ses réalisations, c'est un restaurant sans photos de ses plats. Les clients veulent voir votre travail avant de vous contacter.
+Ça semble évident et pourtant. Le nombre de sites d'artisans où il faut scroller jusqu'en bas de la page, cliquer sur "Contact", puis lire un pavé de texte pour trouver un numéro de téléphone... c'est affolant.
 
-## Erreur 5 : Pas de formulaire de contact
+Votre numéro doit être visible immédiatement. En haut de la page. Sur toutes les pages. Et surtout : cliquable sur mobile. Quand quelqu'un est sur son téléphone et qu'il voit votre numéro, il doit pouvoir appuyer dessus et vous appeler directement. Pas le copier-coller manuellement dans l'appli téléphone.
 
-Certains clients préfèrent écrire plutôt qu'appeler, surtout en dehors des heures ouvrées. Un formulaire de contact simple capture ces demandes 24h/24.
+44% des visiteurs quittent un site s'ils ne trouvent pas facilement un moyen de contact. Quarante-quatre pour cent. Mettez votre 06 en gros en haut du site et c'est réglé.
 
-## La bonne nouvelle
+## Erreur 3 : Votre site est illisible sur téléphone
 
-Ces 5 erreurs sont faciles à éviter quand le site est bien conçu dès le départ. C'est exactement ce qu'on fait chez Site Minute — chaque site est rapide, mobile, avec téléphone visible, photos et formulaire.` }
+En 2026, plus de 60% du trafic web vient des smartphones. Si votre site a été conçu uniquement pour un écran d'ordinateur, vous perdez plus de la moitié de vos visiteurs.
+
+Un site "responsive" — qui s'adapte automatiquement à la taille de l'écran — c'est plus une option, c'est obligatoire. Le texte doit être lisible sans zoomer, les boutons assez gros pour qu'on puisse appuyer avec le pouce, les images qui ne débordent pas de l'écran.
+
+Google pénalise aussi les sites non adaptés mobile dans ses résultats de recherche. Donc non seulement vous perdez les visiteurs qui arrivent sur votre site, mais en plus vous en attirez moins.
+
+## Erreur 4 : Pas de photos, ou des photos horribles
+
+Un plombier sans photos de ses réalisations, c'est un restaurant sans photos de ses plats. Vous iriez manger dans un restaurant dont le site montre zéro photo ? Moi non plus.
+
+Les photos c'est la preuve sociale. C'est ce qui transforme un inconnu sur internet en professionnel de confiance. Un avant/après d'une salle de bain rénovée, un tableau électrique proprement câblé, une terrasse en bois fraîchement posée. Ça vaut tous les discours du monde.
+
+Et par pitié, pas de photos de banque d'images avec des gens en costard qui se serrent la main devant un bureau vitré. Vos clients veulent voir votre vrai travail, pas des photos génériques.
+
+## Erreur 5 : Aucun moyen de vous contacter le soir ou le week-end
+
+Quand est-ce que les gens cherchent un artisan sur internet ? Le soir, après le boulot. Le week-end. Bref, quand vous êtes pas joignable au téléphone.
+
+Si votre site n'a pas de formulaire de contact, vous perdez tous ces clients potentiels. Un formulaire simple — nom, email, téléphone, message — suffit. Le client remplit le formulaire à 23h, vous le rappelez le lendemain matin à 8h. Lui il est content, vous vous avez un nouveau client.
+
+Un formulaire de contact travaille pour vous 24 heures sur 24, 7 jours sur 7, 365 jours par an. C'est votre commercial qui dort jamais et qui vous coûte rien.
+
+## Le point commun de toutes ces erreurs
+
+Elles sont toutes évitables. Un site bien conçu dès le départ n'a aucune de ces erreurs. C'est rapide, c'est mobile, le téléphone est visible, les photos sont belles, le formulaire fonctionne. C'est pas de la magie, c'est du bon sens appliqué correctement.` }
 ];
 
 export default function App() {
@@ -363,25 +456,69 @@ export default function App() {
 
   // ARTICLE PAGE
   if (page === "article" && selectedArticle) {
+    const otherArticles = BLOG_FULL.filter(a => a.id !== selectedArticle.id).slice(0, 3);
     return (
       <div style={{ minHeight: "100vh", background: "#fff", color: "#0f172a", fontFamily: "'Inter', -apple-system, sans-serif" }}>
-        <nav style={{ maxWidth: 1100, margin: "0 auto", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div onClick={() => setPage("home")} style={{ fontSize: 22, fontWeight: 900, cursor: "pointer" }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
-          <button onClick={() => setPage("blog")} style={{ background: "none", border: "1px solid #e2e8f0", color: "#0f172a", padding: "8px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: "pointer" }}>← Blog</button>
-        </nav>
-        <div style={{ maxWidth: 700, margin: "0 auto", padding: "20px 20px 60px" }}>
-          <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 16, flexWrap: "wrap" }}>
-            <span style={{ background: selectedArticle.bg, color: selectedArticle.color, padding: "3px 10px", borderRadius: 6, fontSize: 11, fontWeight: 600 }}>{selectedArticle.tag}</span>
-            <span style={{ fontSize: 12, color: "#94a3b8" }}>{selectedArticle.date}</span>
-            <span style={{ fontSize: 12, color: "#94a3b8" }}>{selectedArticle.readTime}</span>
+        {/* Hero image */}
+        {selectedArticle.image && (
+          <div style={{ width: "100%", height: m ? 220 : 360, background: `linear-gradient(to bottom, rgba(15,23,42,0.3), rgba(15,23,42,0.7)), url(${selectedArticle.image}) center/cover`, display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: m ? "20px" : "40px" }}>
+            <div style={{ maxWidth: 700, margin: "0 auto", width: "100%" }}>
+              <span style={{ background: selectedArticle.bg, color: selectedArticle.color, padding: "4px 12px", borderRadius: 6, fontSize: 12, fontWeight: 600 }}>{selectedArticle.tag}</span>
+              <h1 style={{ fontSize: m ? 24 : 36, fontWeight: 900, color: "#fff", margin: "12px 0 8px", lineHeight: 1.15 }}>{selectedArticle.title}</h1>
+              <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                <span style={{ fontSize: 13, color: "rgba(255,255,255,0.7)" }}>{selectedArticle.date}</span>
+                <span style={{ fontSize: 13, color: "rgba(255,255,255,0.7)" }}>{selectedArticle.readTime} de lecture</span>
+              </div>
+            </div>
           </div>
-          <h1 style={{ fontSize: m ? 26 : 34, fontWeight: 900, margin: "0 0 20px", lineHeight: 1.2 }}>{selectedArticle.title}</h1>
-          {selectedArticle.image && <img src={selectedArticle.image} alt={selectedArticle.title} style={{ width: "100%", height: 280, objectFit: "cover", borderRadius: 16, marginBottom: 24 }} />}
-          <article>{renderMarkdown(selectedArticle.content)}</article>
-          <div style={{ background: "#0f172a", borderRadius: 16, padding: 28, textAlign: "center", marginTop: 32 }}>
-            <h3 style={{ color: "#fff", fontSize: 20, fontWeight: 800, margin: "0 0 8px" }}>Besoin d'un site pour votre activité ?</h3>
-            <p style={{ color: "#94a3b8", fontSize: 14, margin: "0 0 16px" }}>À partir de 399€, livré en 48h.</p>
-            <button onClick={() => { setPage("home"); setTimeout(() => go("contact"), 100); }} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "12px 28px", borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Demander un devis gratuit</button>
+        )}
+        {/* Nav */}
+        <div style={{ borderBottom: "1px solid #f1f5f9", position: "sticky", top: 0, background: "#fff", zIndex: 10 }}>
+          <div style={{ maxWidth: 700, margin: "0 auto", padding: "12px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div onClick={() => setPage("home")} style={{ fontSize: 20, fontWeight: 900, cursor: "pointer" }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
+            <div style={{ display: "flex", gap: 10 }}>
+              <button onClick={() => setPage("blog")} style={{ background: "none", border: "1px solid #e2e8f0", color: "#64748b", padding: "6px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>← Blog</button>
+              <button onClick={() => { if (navigator.share) { navigator.share({ title: selectedArticle.title, url: "https://siteminute.fr/blog/" + selectedArticle.id }); } else { navigator.clipboard.writeText("https://siteminute.fr/blog/" + selectedArticle.id); alert("Lien copié !"); } }} style={{ background: "none", border: "1px solid #e2e8f0", color: "#64748b", padding: "6px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Partager</button>
+            </div>
+          </div>
+        </div>
+        {/* Content */}
+        <div style={{ maxWidth: 700, margin: "0 auto", padding: "32px 20px 20px" }}>
+          {!selectedArticle.image && (
+            <div>
+              <span style={{ background: selectedArticle.bg, color: selectedArticle.color, padding: "4px 12px", borderRadius: 6, fontSize: 12, fontWeight: 600 }}>{selectedArticle.tag}</span>
+              <h1 style={{ fontSize: m ? 26 : 36, fontWeight: 900, margin: "12px 0 8px", lineHeight: 1.15 }}>{selectedArticle.title}</h1>
+              <div style={{ display: "flex", gap: 16, marginBottom: 24 }}>
+                <span style={{ fontSize: 13, color: "#94a3b8" }}>{selectedArticle.date}</span>
+                <span style={{ fontSize: 13, color: "#94a3b8" }}>{selectedArticle.readTime}</span>
+              </div>
+            </div>
+          )}
+          <article style={{ fontSize: 15, lineHeight: 1.9 }}>{renderMarkdown(selectedArticle.content)}</article>
+        </div>
+        {/* CTA */}
+        <div style={{ maxWidth: 700, margin: "0 auto", padding: "0 20px 32px" }}>
+          <div style={{ background: "linear-gradient(135deg, #0f172a, #1e293b)", borderRadius: 20, padding: m ? 28 : 40, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+            <div style={{ flex: 1, minWidth: 200 }}>
+              <h3 style={{ color: "#fff", fontSize: 22, fontWeight: 800, margin: "0 0 8px" }}>Besoin d'un site ?</h3>
+              <p style={{ color: "#94a3b8", fontSize: 14, margin: 0, lineHeight: 1.6 }}>À partir de 399€, livré en 48h. Paiement à la livraison uniquement.</p>
+            </div>
+            <button onClick={() => { setPage("home"); setTimeout(() => go("contact"), 100); }} className="btn-glow" style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "14px 28px", borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>Devis gratuit →</button>
+          </div>
+        </div>
+        {/* Articles similaires */}
+        <div style={{ maxWidth: 700, margin: "0 auto", padding: "0 20px 60px" }}>
+          <h3 style={{ fontSize: 20, fontWeight: 800, margin: "0 0 16px" }}>À lire aussi</h3>
+          <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(3, 1fr)", gap: 12 }}>
+            {otherArticles.map((a) => (
+              <div key={a.id} onClick={() => { setSelectedArticle(a); window.scrollTo(0, 0); }} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 12, padding: 16, cursor: "pointer", transition: "all 0.2s" }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3b82f6"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; }}
+              >
+                <span style={{ background: a.bg, color: a.color, padding: "2px 8px", borderRadius: 4, fontSize: 10, fontWeight: 600 }}>{a.tag}</span>
+                <h4 style={{ fontSize: 14, fontWeight: 700, margin: "8px 0 0", lineHeight: 1.4 }}>{a.title}</h4>
+              </div>
+            ))}
           </div>
         </div>
       </div>
