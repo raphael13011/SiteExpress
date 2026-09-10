@@ -739,17 +739,17 @@ export default function App() {
               <div key={i} className="plan-fx" style={{ background: plan.highlight ? "#0f172a" : "#fff", border: plan.highlight ? "2px solid #3b82f6" : "1px solid #e2e8f0", borderRadius: 20, padding: 32, position: "relative", display: "flex", flexDirection: "column" }}>
                 {plan.highlight && <div style={{ position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)", background: "#3b82f6", color: "#fff", padding: "4px 16px", borderRadius: 20, fontSize: 12, fontWeight: 600 }}>Le + choisi</div>}
                 <div style={{ fontSize: 14, fontWeight: 600, color: "#3b82f6", marginBottom: 6 }}>{plan.name}</div>
-                <div style={{ fontSize: 40, fontWeight: 900, color: (plan.highlight || plan.orange) ? "#fff" : "#0f172a", marginBottom: 4 }}>{plan.price ? <>{plan.orange && <span style={{ fontSize: 13, fontWeight: 500, display: "block", marginBottom: -4 }}>à partir de</span>}{plan.price}<span style={{ fontSize: 18, fontWeight: 500 }}>{"€"}</span></> : "Sur devis"}</div>
-                <p style={{ fontSize: 14, color: (plan.highlight || plan.orange) ? "#94a3b8" : "#64748b", margin: "0 0 20px" }}>{plan.desc}</p>
+                <div style={{ fontSize: 40, fontWeight: 900, color: plan.highlight ? "#fff" : "#0f172a", marginBottom: 4 }}>{plan.price ? <>{plan.orange && <span style={{ fontSize: 13, fontWeight: 500, display: "block", marginBottom: -4, color: "#f97316" }}>à partir de</span>}{plan.price}<span style={{ fontSize: 18, fontWeight: 500 }}>{"€"}</span></> : "Sur devis"}</div>
+                <p style={{ fontSize: 14, color: plan.highlight ? "#94a3b8" : "#64748b", margin: "0 0 20px" }}>{plan.desc}</p>
                 <div style={{ flex: 1 }}>
                   {plan.features.map((f, j) => (
                     <div key={j} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
                       <div style={{ width: 18, height: 18, borderRadius: "50%", background: plan.orange ? "rgba(249,115,22,0.15)" : plan.highlight ? "rgba(59,130,246,0.15)" : "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, color: plan.orange ? "#f97316" : "#3b82f6", flexShrink: 0 }}>{"✓"}</div>
-                      <span style={{ fontSize: 14, color: (plan.highlight || plan.orange) ? "#cbd5e1" : "#475569" }}>{f}</span>
+                      <span style={{ fontSize: 14, color: plan.highlight ? "#cbd5e1" : "#475569" }}>{f}</span>
                     </div>
                   ))}
                 </div>
-                <button onClick={() => go("contact")} style={{ width: "100%", padding: 14, marginTop: 20, background: plan.orange ? "#f97316" : plan.highlight ? "#3b82f6" : "transparent", border: (plan.highlight || plan.orange) ? "none" : "1px solid #e2e8f0", borderRadius: 10, color: (plan.highlight || plan.orange) ? "#fff" : "#0f172a", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{plan.price ? "Choisir cette offre" : "Demander un devis"}</button>
+                <button onClick={() => go("contact")} style={{ width: "100%", padding: 14, marginTop: 20, background: plan.orange ? "#f97316" : plan.highlight ? "#3b82f6" : "transparent", border: (plan.highlight || plan.orange) ? "none" : "1px solid #e2e8f0", borderRadius: 10, color: plan.highlight ? "#fff" : "#0f172a", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{plan.price ? "Choisir cette offre" : "Demander un devis"}</button>
               </div>
             ))}
           </div>
