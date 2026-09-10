@@ -711,6 +711,20 @@ export default function App() {
         </div>
       </div>
 
+      {/* PROMO CARTES DE VISITE */}
+      <div style={{ padding: "24px 20px" }}>
+        <div style={{ maxWidth: 700, margin: "0 auto", background: "#fff", border: "2px dashed #3b82f6", borderRadius: 20, padding: m ? 24 : 36, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+          <div style={{ fontSize: 48 }}>🎁</div>
+          <div style={{ flex: 1, minWidth: 250 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+              <h3 style={{ fontSize: 18, fontWeight: 800, margin: 0 }}>Offert pour tout nouveau client</h3>
+              <span style={{ background: "#dc2626", color: "#fff", padding: "2px 10px", borderRadius: 20, fontSize: 11, fontWeight: 700 }}>GRATUIT</span>
+            </div>
+            <p style={{ fontSize: 14, color: "#64748b", margin: 0, lineHeight: 1.6 }}>100 cartes de visite professionnelles avec QR code qui renvoie directement sur votre site. Vos clients scannent, ils arrivent sur votre site. Simple et efficace.</p>
+          </div>
+        </div>
+      </div>
+
       {/* METIERS */}
       <div id="metiers" style={{ padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -861,20 +875,6 @@ export default function App() {
           <div style={{ flex: 1, minWidth: 250 }}>
             <h3 style={{ fontSize: 22, fontWeight: 800, color: "#fff", margin: "0 0 8px" }}>Satisfait ou vous ne payez pas</h3>
             <p style={{ fontSize: 15, color: "#bbf7d0", margin: 0, lineHeight: 1.6 }}>On crée votre site, vous le validez. Si le résultat ne vous convient pas, vous ne payez rien. Zéro risque, zéro engagement.</p>
-          </div>
-        </div>
-      </div>
-
-      {/* PROMO CARTES DE VISITE */}
-      <div style={{ padding: "0 20px 40px" }}>
-        <div style={{ maxWidth: 700, margin: "0 auto", background: "#fff", border: "2px dashed #3b82f6", borderRadius: 20, padding: m ? 24 : 36, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-          <div style={{ fontSize: 48 }}>🎁</div>
-          <div style={{ flex: 1, minWidth: 250 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-              <h3 style={{ fontSize: 18, fontWeight: 800, margin: 0 }}>Offert pour tout nouveau client</h3>
-              <span style={{ background: "#dc2626", color: "#fff", padding: "2px 10px", borderRadius: 20, fontSize: 11, fontWeight: 700 }}>GRATUIT</span>
-            </div>
-            <p style={{ fontSize: 14, color: "#64748b", margin: 0, lineHeight: 1.6 }}>100 cartes de visite professionnelles avec QR code qui renvoie directement sur votre site. Vos clients scannent, ils arrivent sur votre site. Simple et efficace.</p>
           </div>
         </div>
       </div>
