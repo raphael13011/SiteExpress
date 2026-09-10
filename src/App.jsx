@@ -83,7 +83,7 @@ Et puis il y a un truc que beaucoup de gens ignorent : Facebook ne montre vos pu
 
 Faisons un calcul simple. Disons que vous ratez 3 clients par semaine parce qu'ils ne vous trouvent pas en ligne. Si votre intervention moyenne vaut 200€, ça fait 600€ par semaine de manque à gagner. Sur un mois, c'est 2 400€. Sur un an, presque 30 000€.
 
-Maintenant, un site web vitrine coûte 399€ à créer. La maintenance c'est 49€ par mois. Faites le calcul : votre site se rembourse dès le premier client. Tout le reste, c'est du bonus.
+Maintenant, un site web vitrine coûte 399€ à créer. La maintenance c'est 29€ par mois. Faites le calcul : votre site se rembourse dès le premier client. Tout le reste, c'est du bonus.
 
 ## Ce qu'il faut sur votre site (et rien de plus)
 
@@ -187,7 +187,7 @@ Et les avis Google. On lui a dit de demander à chaque cliente satisfaite de lai
 
 ## Ce que ça lui a coûté
 
-699€ pour le site sur-mesure. 49€ par mois pour la maintenance. Total première année : 1 287€. Son gain supplémentaire la première année : environ 15 000€ de chiffre d'affaires en plus. Je vous laisse faire le calcul du retour sur investissement.` },
+699€ pour le site sur-mesure. 29€ par mois pour la maintenance. Total première année : 1 287€. Son gain supplémentaire la première année : environ 15 000€ de chiffre d'affaires en plus. Je vous laisse faire le calcul du retour sur investissement.` },
 
   { id: "site-vs-facebook", image: "/blog-facebook.jpg", title: "Site web vs page Facebook : pourquoi les réseaux sociaux ne suffisent pas", tag: "Comparatif", color: "#2e7d32", bg: "#e8f5e9", readTime: "7 min", date: "2026-08-20",
     content: `La semaine dernière un peintre en bâtiment m'a dit : "Pourquoi je paierais pour un site alors que j'ai déjà ma page Facebook ?". C'est une question légitime. Et la réponse est simple : parce que Facebook et un site web ne font pas du tout le même travail.
@@ -421,34 +421,78 @@ export default function App() {
 
   // BLOG PAGE
   if (page === "blog") {
+    const featured = BLOG_FULL[0];
+    const rest = BLOG_FULL.slice(1);
     return (
-      <div style={{ minHeight: "100vh", background: "#fff", color: "#0f172a", fontFamily: "'Inter', -apple-system, sans-serif" }}>
-        <nav style={{ maxWidth: 1100, margin: "0 auto", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div onClick={() => setPage("home")} style={{ fontSize: 22, fontWeight: 900, cursor: "pointer" }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
-          <button onClick={() => setPage("home")} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "8px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: "pointer" }}>Retour</button>
-        </nav>
-        <div style={{ maxWidth: 800, margin: "0 auto", padding: "40px 20px 60px" }}>
-          <h1 style={{ fontSize: m ? 28 : 36, fontWeight: 900, margin: "0 0 8px", textAlign: "center" }}>Blog Site Minute</h1>
-          <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 40px", textAlign: "center" }}>Conseils pour développer votre présence en ligne</p>
-          {BLOG_FULL.map((article) => (
-            <div key={article.id} onClick={() => { setSelectedArticle(article); setPage("article"); }} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, marginBottom: 14, cursor: "pointer", transition: "all 0.2s", overflow: "hidden" }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3b82f6"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; }}
-            >
-              {article.image && <img src={article.image} alt={article.title} style={{ width: "100%", height: 180, objectFit: "cover" }} />}
-              <div style={{ padding: 24 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                <span style={{ background: article.bg, color: article.color, padding: "3px 10px", borderRadius: 6, fontSize: 11, fontWeight: 600 }}>{article.tag}</span>
-                <span style={{ fontSize: 12, color: "#94a3b8" }}>{article.readTime}</span>
+      <div style={{ minHeight: "100vh", background: "#f8fafc", color: "#0f172a", fontFamily: "'Inter', -apple-system, sans-serif" }}>
+        {/* Nav */}
+        <div style={{ background: "#fff", borderBottom: "1px solid #f1f5f9", position: "sticky", top: 0, zIndex: 10 }}>
+          <div style={{ maxWidth: 1000, margin: "0 auto", padding: "14px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div onClick={() => setPage("home")} style={{ fontSize: 22, fontWeight: 900, cursor: "pointer" }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
+            <div style={{ display: "flex", gap: 10 }}>
+              <button onClick={() => setPage("home")} style={{ background: "none", border: "1px solid #e2e8f0", color: "#64748b", padding: "7px 16px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>← Accueil</button>
+              <button onClick={() => go("contact")} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "7px 16px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Devis gratuit</button>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ maxWidth: 1000, margin: "0 auto", padding: m ? "32px 16px 60px" : "48px 20px 80px" }}>
+          {/* Header */}
+          <div style={{ marginBottom: 40 }}>
+            <h1 style={{ fontSize: m ? 30 : 42, fontWeight: 900, margin: "0 0 10px" }}>Le blog</h1>
+            <p style={{ fontSize: 16, color: "#64748b", margin: 0, maxWidth: 500 }}>Conseils concrets pour développer votre activité grâce au web. Pas de blabla, que du pratique.</p>
+          </div>
+
+          {/* Featured article */}
+          <div onClick={() => { setSelectedArticle(featured); setPage("article"); }} style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "1fr 1fr", background: "#fff", borderRadius: 20, overflow: "hidden", cursor: "pointer", marginBottom: 32, boxShadow: "0 1px 3px rgba(0,0,0,0.04)", transition: "all 0.3s" }}
+            onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 30px rgba(59,130,246,0.08)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.04)"; e.currentTarget.style.transform = "translateY(0)"; }}
+          >
+            <div style={{ background: featured.image ? `url(${featured.image}) center/cover` : "#e2e8f0", minHeight: m ? 200 : 300 }} />
+            <div style={{ padding: m ? 24 : 36, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 14 }}>
+                <span style={{ background: featured.bg, color: featured.color, padding: "4px 12px", borderRadius: 6, fontSize: 12, fontWeight: 600 }}>{featured.tag}</span>
+                <span style={{ fontSize: 13, color: "#94a3b8" }}>{featured.readTime}</span>
               </div>
-              <h3 style={{ fontSize: 18, fontWeight: 800, margin: "0 0 6px" }}>{article.title}</h3>
+              <h2 style={{ fontSize: m ? 22 : 26, fontWeight: 900, margin: "0 0 12px", lineHeight: 1.25 }}>{featured.title}</h2>
+              <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 16px", lineHeight: 1.6 }}>{featured.content.substring(0, 180).trim()}...</p>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: 12, color: "#94a3b8" }}>{article.date}</span>
-                <span style={{ fontSize: 13, color: "#3b82f6", fontWeight: 600 }}>Lire →</span>
-              </div>
+                <span style={{ fontSize: 13, color: "#94a3b8" }}>{featured.date}</span>
+                <span style={{ fontSize: 14, color: "#3b82f6", fontWeight: 700 }}>Lire l'article →</span>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Grid */}
+          <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(2, 1fr)", gap: 20 }}>
+            {rest.map((article) => (
+              <div key={article.id} onClick={() => { setSelectedArticle(article); setPage("article"); }} style={{ background: "#fff", borderRadius: 16, overflow: "hidden", cursor: "pointer", boxShadow: "0 1px 3px rgba(0,0,0,0.04)", transition: "all 0.3s" }}
+                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 30px rgba(59,130,246,0.08)"; e.currentTarget.style.transform = "translateY(-3px)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.04)"; e.currentTarget.style.transform = "translateY(0)"; }}
+              >
+                <div style={{ background: article.image ? `url(${article.image}) center/cover` : "#e2e8f0", height: 180 }} />
+                <div style={{ padding: 22 }}>
+                  <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 12 }}>
+                    <span style={{ background: article.bg, color: article.color, padding: "3px 10px", borderRadius: 6, fontSize: 11, fontWeight: 600 }}>{article.tag}</span>
+                    <span style={{ fontSize: 12, color: "#94a3b8" }}>{article.readTime}</span>
+                  </div>
+                  <h3 style={{ fontSize: 17, fontWeight: 800, margin: "0 0 10px", lineHeight: 1.35 }}>{article.title}</h3>
+                  <p style={{ fontSize: 13, color: "#94a3b8", margin: "0 0 14px", lineHeight: 1.5, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{article.content.substring(0, 120).trim()}...</p>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: 12, color: "#cbd5e1" }}>{article.date}</span>
+                    <span style={{ fontSize: 13, color: "#3b82f6", fontWeight: 600 }}>Lire →</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA bottom */}
+          <div style={{ background: "#0f172a", borderRadius: 20, padding: m ? 28 : 40, textAlign: "center", marginTop: 40 }}>
+            <h3 style={{ color: "#fff", fontSize: 22, fontWeight: 800, margin: "0 0 8px" }}>Prêt à être visible sur Google ?</h3>
+            <p style={{ color: "#94a3b8", fontSize: 14, margin: "0 0 20px" }}>Votre site pro à partir de 399€, livré en 48h.</p>
+            <button onClick={() => { setPage("home"); setTimeout(() => go("contact"), 100); }} className="btn-glow" style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "14px 32px", borderRadius: 10, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Demander un devis gratuit</button>
+          </div>
         </div>
       </div>
     );
@@ -562,7 +606,7 @@ export default function App() {
       {/* STATS */}
       <div style={{ padding: "32px 20px", borderBottom: "1px solid #f1f5f9" }}>
         <div style={{ maxWidth: 750, margin: "0 auto", display: "flex", justifyContent: "center", gap: m ? 20 : 50, flexWrap: "wrap", textAlign: "center" }}>
-          {[{ v: "48h", l: "Délai de livraison" }, { v: "399€", l: "À partir de" }, { v: "100%", l: "Adapté mobile" }, { v: "49€/mois", l: "Maintenance tout inclus" }].map((s, i) => (
+          {[{ v: "48h", l: "Délai de livraison" }, { v: "399€", l: "À partir de" }, { v: "100%", l: "Adapté mobile" }, { v: "29€/mois", l: "Maintenance tout inclus" }].map((s, i) => (
             <div key={i} className="stat-fx"><div style={{ fontSize: 24, fontWeight: 900, color: "#3b82f6" }}>{s.v}</div><div style={{ fontSize: 12, color: "#64748b", marginTop: 4 }}>{s.l}</div></div>
           ))}
         </div>
@@ -870,7 +914,7 @@ export default function App() {
             <h3 style={{ color: "#3b82f6", fontSize: 15, marginTop: 16, marginBottom: 6 }}>3. Livraison et validation</h3>
             <p>Le client reçoit une preview pour validation. 2 allers-retours de modifications inclus dans le prix.</p>
             <h3 style={{ color: "#3b82f6", fontSize: 15, marginTop: 16, marginBottom: 6 }}>4. Maintenance</h3>
-            <p>L'abonnement maintenance à 49€/mois est optionnel et sans engagement. Il comprend hébergement, nom de domaine, mises à jour, analytics et support.</p>
+            <p>L'abonnement maintenance à 29€/mois est optionnel et sans engagement. Il comprend hébergement, nom de domaine, mises à jour, analytics et support.</p>
             <h3 style={{ color: "#3b82f6", fontSize: 15, marginTop: 16, marginBottom: 6 }}>5. Propriété du site</h3>
             <p>Le client est propriétaire de son site dès le paiement. En cas de résiliation de la maintenance, le client récupère tous les fichiers.</p>
             <h3 style={{ color: "#3b82f6", fontSize: 15, marginTop: 16, marginBottom: 6 }}>6. Données personnelles</h3>
