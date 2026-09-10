@@ -271,7 +271,92 @@ Un formulaire de contact travaille pour vous 24 heures sur 24, 7 jours sur 7, 36
 
 ## Le point commun de toutes ces erreurs
 
-Elles sont toutes évitables. Un site bien conçu dès le départ n'a aucune de ces erreurs. C'est rapide, c'est mobile, le téléphone est visible, les photos sont belles, le formulaire fonctionne. C'est pas de la magie, c'est du bon sens appliqué correctement.` }
+Elles sont toutes évitables. Un site bien conçu dès le départ n'a aucune de ces erreurs. C'est rapide, c'est mobile, le téléphone est visible, les photos sont belles, le formulaire fonctionne. C'est pas de la magie, c'est du bon sens appliqué correctement.` },
+
+  { id: "conformite-site-web", image: "/blog-conformite.jpg", title: "Votre site est-il vraiment aux normes ? Les 10 trucs que personne ne vérifie", tag: "Juridique", color: "#dc2626", bg: "#fef2f2", readTime: "10 min", date: "2026-09-08",
+    content: `Je vais vous raconter un truc qui m'est arrivé le mois dernier. Un client m'appelle, un restaurateur à Marseille. Il avait fait faire son site par un "cousin qui s'y connaît". Le site était joli, les photos donnaient faim, tout allait bien. Sauf qu'il venait de recevoir une mise en demeure. Son site n'avait pas de mentions légales. Pas de politique de confidentialité. Pas de bandeau cookies. Rien. En 2026, c'est le genre de truc qui peut vous coûter très cher.
+
+Alors on va faire simple. Voici les 10 points à vérifier sur votre site. Si vous cochez pas tout, vous êtes en infraction. Et non, c'est pas du blabla de juriste — c'est du concret qui peut vous tomber dessus.
+
+## 1. Les mentions légales — le truc que tout le monde oublie
+
+C'est la loi (LCEN pour les intimes). Tout site édité en France doit afficher ses mentions légales. Accessible depuis n'importe quelle page, généralement en bas dans le footer.
+
+Concrètement, qu'est-ce qu'il faut mettre dedans ? Si vous êtes auto-entrepreneur ou société : votre nom ou raison sociale, votre adresse, votre numéro SIRET, et les coordonnées de votre hébergeur. C'est tout. C'est pas compliqué, mais faut le faire.
+
+Le truc qui énerve c'est que la majorité des sites de petits artisans n'ont tout simplement pas de page de mentions légales. Et personne leur dit. Jusqu'au jour où quelqu'un le signale.
+
+## 2. Le bandeau cookies — non, le petit "j'accepte" suffit pas
+
+Depuis que la CNIL a serré la vis, c'est devenu un vrai sujet. Si vous utilisez Google Analytics (et vous devriez), vous déposez un cookie de traçage sur le navigateur de vos visiteurs. Et ça, vous avez pas le droit de le faire sans demander la permission.
+
+Les règles sont claires. Le visiteur doit pouvoir refuser aussi facilement qu'accepter. Pas de bouton "Accepter" bien gros et un "Refuser" planqué en gris clair en bas à gauche. Les deux boutons doivent être au même niveau. Et le silence — genre le mec qui scrolle sans cliquer — ça vaut pas consentement.
+
+Je sais, c'est chiant. Mais c'est la loi. Et une amende CNIL, c'est entre 2% et 4% de votre chiffre d'affaires. Autant dire que ça douille.
+
+## 3. La politique de confidentialité — le RGPD c'est pas que pour les gros
+
+Beaucoup d'artisans pensent que le RGPD c'est un truc de Google ou de Facebook. Pas du tout. Dès que vous collectez un nom, un email, un numéro de téléphone via un formulaire de contact, vous traitez des données personnelles. Et le RGPD s'applique.
+
+Vous devez avoir une page "Politique de confidentialité" qui explique en langage normal ce que vous faites des données. Pourquoi vous les collectez (pour répondre à une demande de devis, par exemple). Combien de temps vous les gardez. Qui y a accès. Et comment le visiteur peut demander leur suppression.
+
+C'est pas un roman à écrire. Une page d'une vingtaine de lignes suffit largement pour un site vitrine d'artisan.
+
+## 4. Vos formulaires — arrêtez de demander la date de naissance
+
+Le principe de minimisation, c'est le mot barbare pour dire : ne demandez que ce dont vous avez réellement besoin. Votre formulaire de devis a besoin du nom, de l'email ou du téléphone, et du message. Point.
+
+Pas besoin de la date de naissance. Pas besoin de l'adresse postale complète (sauf si c'est pertinent pour votre intervention). Et surtout, pas de case pré-cochée "Je souhaite recevoir la newsletter". C'est interdit.
+
+Autre truc important : sous chaque formulaire, mettez une petite ligne du genre "Vos données sont utilisées uniquement pour répondre à votre demande. Consultez notre politique de confidentialité." Avec un lien vers ladite politique. Voilà, c'est fait, vous êtes dans les clous.
+
+## 5. Les CGV — obligatoires si vous vendez en ligne
+
+Si vous vendez des produits ou des services directement sur votre site, vous devez avoir des Conditions Générales de Vente. C'est le contrat entre vous et votre client.
+
+Ça doit couvrir le prix, les modalités de paiement et de livraison, le droit de rétractation de 14 jours (pour les particuliers), et les garanties légales. Si vous vendez pas en ligne — si votre site sert juste de vitrine — les CGV sont pas obligatoires. Mais c'est quand même bien de les avoir.
+
+## 6. L'accessibilité — le sujet dont personne parle
+
+Rendre votre site accessible aux personnes en situation de handicap, c'est pas juste un truc sympa à faire. C'est de plus en plus encadré par la loi, notamment avec le RGAA en France.
+
+En pratique pour un site d'artisan, ça veut dire quoi ? Des textes alternatifs sur vos images (le petit texte qui décrit l'image pour les lecteurs d'écran). Un contraste suffisant entre votre texte et votre fond (pas de gris clair sur blanc, par pitié). Et la possibilité de naviguer au clavier, pas seulement à la souris.
+
+Honnêtement, la plupart des sites d'artisans sont pas aux normes d'accessibilité. Mais c'est un sujet qui monte, et les sanctions vont tomber tôt ou tard. Autant s'y mettre maintenant.
+
+## 7. Les images — non vous pouvez pas prendre n'importe quoi sur Google
+
+Ça c'est le classique. Le mec qui fait son site, il va sur Google Images, il tape "plombier travail", il prend la première photo qui lui plaît. Sauf que cette photo appartient à quelqu'un. Et l'utiliser sans autorisation, c'est de la contrefaçon.
+
+La solution ? Utilisez vos propres photos. Prenez votre téléphone, photographiez vos chantiers, vos réalisations, votre atelier. C'est mieux pour votre crédibilité ET c'est légal. Sinon, il existe des banques d'images gratuites comme Unsplash ou Pexels.
+
+Même chose pour les polices de caractères. Si vous utilisez une police spéciale sur votre site, vérifiez que vous avez la licence web. Google Fonts est gratuit et légal, utilisez ça.
+
+## 8. La médiation — le truc que personne met
+
+Si vous vendez à des particuliers, vous devez obligatoirement indiquer les coordonnées d'un médiateur de la consommation sur votre site. C'est le professionnel neutre vers lequel votre client peut se tourner en cas de litige.
+
+Concrètement, c'est une ligne dans vos CGV ou vos mentions légales avec le nom et le site web du médiateur. Vous pouvez en trouver un via la liste officielle du ministère de l'Économie. C'est pas le truc le plus excitant du monde mais c'est obligatoire.
+
+## 9. Le HTTPS — si votre site est encore en HTTP, on a un problème
+
+En 2026, un site sans certificat SSL (le petit cadenas dans la barre d'adresse), c'est plus possible. D'abord parce que Google pénalise les sites non sécurisés dans ses résultats de recherche. Ensuite parce que les navigateurs affichent un gros avertissement "Site non sécurisé" qui fait fuir les visiteurs. Et enfin parce que le RGPD impose de sécuriser les données que vous collectez.
+
+Avec un bon hébergeur, le certificat SSL est inclus et s'active en un clic. Il y a vraiment aucune raison de pas l'avoir.
+
+Tant qu'on parle de sécurité : mettez un mot de passe solide sur votre interface d'administration. Pas "admin123" ou le nom de votre chien. Un vrai mot de passe avec des majuscules, des chiffres, des caractères spéciaux. Et activez la double authentification si c'est possible.
+
+## 10. Les droits des utilisateurs — ils peuvent vous demander de tout supprimer
+
+Vos visiteurs ont des droits sur leurs données. Ils peuvent vous demander d'accéder à ce que vous avez sur eux, de le corriger, ou de tout effacer. C'est ce qu'on appelle le droit à l'oubli.
+
+En pratique, mettez une adresse email de contact pour ces demandes dans votre politique de confidentialité. Quelque chose comme contact@votresite.fr. Et précisez que le visiteur peut aussi porter réclamation auprès de la CNIL s'il estime que ses droits ne sont pas respectés.
+
+## Le mot de la fin
+
+Je sais que tout ça peut sembler lourd. Mais la réalité c'est que 90% du boulot se fait une seule fois, à la création du site. Mentions légales, politique de confidentialité, bandeau cookies, formulaires propres — quand c'est bien fait dès le départ, vous avez plus à y toucher.
+
+C'est exactement pour ça que quand on crée un site chez Site Minute, tout est inclus d'office. On va pas vous livrer un site joli mais illégal. Le juridique fait partie du package, parce qu'un site qui respecte pas la loi, c'est un site qui vous met en danger.` }
 ];
 
 export default function App() {
