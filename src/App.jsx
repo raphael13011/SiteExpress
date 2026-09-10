@@ -769,6 +769,45 @@ export default function App() {
         </div>
       </div>
 
+      {/* IA & AUTOMATION */}
+      <div style={{ padding: m ? "50px 20px" : "70px 20px", background: "linear-gradient(135deg, #1a0a00, #2d1600)" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, justifyContent: "center", marginBottom: 8 }}>
+            <span style={{ background: "#f97316", color: "#fff", padding: "4px 14px", borderRadius: 20, fontSize: 12, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>Nouveau</span>
+            <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, color: "#fff", margin: 0 }}>IA & Automation</h2>
+          </div>
+          <p style={{ fontSize: 15, color: "#a1887f", textAlign: "center", margin: "0 0 36px" }}>Donnez des superpouvoirs à votre site</p>
+
+          <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(3, 1fr)", gap: 16 }}>
+            {[
+              { icon: "🤖", name: "Chatbot IA", price: "99", desc: "Un assistant qui répond à vos clients 24h/24. Il connaît vos services, vos tarifs, vos horaires. Vos clients obtiennent des réponses même à 3h du matin." },
+              { icon: "📅", name: "Prise de RDV auto", price: "69", desc: "Vos clients réservent directement un créneau sur votre planning. Plus de ping-pong par téléphone. Synchronisé avec votre agenda." },
+              { icon: "📧", name: "Réponse auto aux leads", price: "49", desc: "Un client remplit votre formulaire ? Il reçoit un email personnalisé automatiquement avec vos infos et un lien de prise de RDV." },
+              { icon: "🔄", name: "Relance automatique", price: "79", desc: "Un prospect a demandé un devis mais n'a pas répondu ? Email de relance automatique à J+3 et J+7. Sans lever le petit doigt." },
+              { icon: "❓", name: "FAQ intelligente", price: "59", desc: "L'IA génère et répond aux questions fréquentes de votre métier. Mise à jour automatique selon les questions reçues." },
+              { icon: "📋", name: "Devis automatique", price: "129", desc: "Le client décrit son besoin, l'IA génère un devis estimatif personnalisé. Vous validez et envoyez. Gain de temps énorme." }
+            ].map((item, i) => (
+              <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(249,115,22,0.2)", borderRadius: 16, padding: 24, transition: "all 0.3s" }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#f97316"; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 40px rgba(249,115,22,0.1)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.2)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
+              >
+                <div style={{ fontSize: 32, marginBottom: 12 }}>{item.icon}</div>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 800, color: "#fff", margin: 0 }}>{item.name}</h3>
+                  <span style={{ color: "#f97316", fontSize: 16, fontWeight: 800 }}>{item.price}€</span>
+                </div>
+                <p style={{ fontSize: 13, color: "#a1887f", margin: 0, lineHeight: 1.6 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: 28 }}>
+            <p style={{ fontSize: 13, color: "#a1887f", marginBottom: 16 }}>Toutes les options IA sont compatibles avec nos 3 formules de site</p>
+            <button onClick={() => go("contact")} style={{ background: "#f97316", color: "#fff", border: "none", padding: "14px 32px", borderRadius: 10, fontSize: 16, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 20px rgba(249,115,22,0.3)" }}>Demander un devis IA</button>
+          </div>
+        </div>
+      </div>
+
       {/* OPTIONS */}
       <div id="options" style={{ background: "#f8fafc", padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
