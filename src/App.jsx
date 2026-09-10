@@ -744,12 +744,12 @@ export default function App() {
                 <div style={{ flex: 1 }}>
                   {plan.features.map((f, j) => (
                     <div key={j} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
-                      <div style={{ width: 18, height: 18, borderRadius: "50%", background: plan.orange ? "rgba(249,115,22,0.15)" : plan.highlight ? "rgba(59,130,246,0.15)" : "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, color: plan.orange ? "#f97316" : "#3b82f6", flexShrink: 0 }}>{"✓"}</div>
+                      <div style={{ width: 18, height: 18, borderRadius: "50%", background: plan.highlight ? "rgba(59,130,246,0.15)" : "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, color: "#3b82f6", flexShrink: 0 }}>{"✓"}</div>
                       <span style={{ fontSize: 14, color: plan.highlight ? "#cbd5e1" : "#475569" }}>{f}</span>
                     </div>
                   ))}
                 </div>
-                <button onClick={() => go("contact")} style={{ width: "100%", padding: 14, marginTop: 20, background: plan.orange ? "#f97316" : plan.highlight ? "#3b82f6" : "transparent", border: (plan.highlight || plan.orange) ? "none" : "1px solid #e2e8f0", borderRadius: 10, color: plan.highlight ? "#fff" : "#0f172a", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{plan.price ? "Choisir cette offre" : "Demander un devis"}</button>
+                <button onClick={() => go("contact")} style={{ width: "100%", padding: 14, marginTop: 20, background: plan.highlight ? "#3b82f6" : "transparent", border: plan.highlight ? "none" : "1px solid #e2e8f0", borderRadius: 10, color: plan.highlight ? "#fff" : "#0f172a", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{plan.price ? "Choisir cette offre" : "Demander un devis"}</button>
               </div>
             ))}
           </div>
