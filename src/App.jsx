@@ -661,11 +661,11 @@ export default function App() {
       <div style={{ padding: "40px 20px" }}>
         <div style={{ maxWidth: 700, margin: "0 auto", display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap", justifyContent: "center" }}>
           <div style={{ flex: 1, minWidth: 250 }}>
-            <h3 style={{ fontSize: 22, fontWeight: 800, margin: "0 0 8px" }}>Maintenance tout inclus — 49{"€"}/mois</h3>
+            <h3 style={{ fontSize: 22, fontWeight: 800, margin: "0 0 8px" }}>Maintenance tout inclus — 29{"€"}/mois</h3>
             <p style={{ fontSize: 14, color: "#64748b", margin: 0, lineHeight: 1.6 }}>Hébergement, nom de domaine, mises à jour, Google Analytics, support email. Concentrez-vous sur votre métier.</p>
           </div>
           <div style={{ background: "#0f172a", color: "#fff", padding: "20px 32px", borderRadius: 14, textAlign: "center" }}>
-            <div style={{ fontSize: 36, fontWeight: 900 }}>49{"€"}</div>
+            <div style={{ fontSize: 36, fontWeight: 900 }}>29{"€"}</div>
             <div style={{ fontSize: 13, color: "#94a3b8" }}>/ mois {"·"} sans engagement</div>
           </div>
         </div>
