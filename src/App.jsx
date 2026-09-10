@@ -34,9 +34,9 @@ const OPTIONS = [
 ];
 
 const METIERS = [
-  { icon: "\uD83D\uDD27", name: "Artisan / BTP", desc: "Électricien, plombier, peintre, maçon. Réalisations et demandes de devis." },
-  { icon: "\uD83D\uDC85", name: "Beauté / Bien-être", desc: "Prothésiste ongulaire, esthéticienne, coiffeur. Galerie, tarifs, RDV." },
-  { icon: "\uD83C\uDF7D\uFE0F", name: "Restaurant / Traiteur", desc: "Menu en ligne, photos, réservation, lien Uber Eats." },
+  { icon: "\uD83D\uDD27", name: "Artisan / BTP", desc: "Électricien, plombier, peintre, maçon à Marseille. Réalisations et demandes de devis." },
+  { icon: "\uD83D\uDC85", name: "Beauté / Bien-être", desc: "Prothésiste ongulaire, esthéticienne, coiffeur à Marseille et Aix. Galerie, tarifs, RDV." },
+  { icon: "\uD83C\uDF7D\uFE0F", name: "Restaurant / Traiteur", desc: "Restaurant à Marseille. Menu, photos, réservation, Uber Eats." },
   { icon: "\uD83C\uDFCB\uFE0F", name: "Sport / Coaching", desc: "Coach sportif, salle, yoga. Planning, tarifs, inscription." },
   { icon: "\uD83D\uDCF8", name: "Photographe", desc: "Portfolio visuel, galeries clients, réservation." },
   { icon: "\uD83E\uDDF9", name: "Services / Nettoyage", desc: "Nettoyage, conciergerie. Zones d'intervention, devis." },
@@ -683,9 +683,9 @@ export default function App() {
       {/* HERO */}
       <div style={{ background: "linear-gradient(160deg, #0f172a, #1e293b)", padding: m ? "50px 20px" : "80px 20px 70px", textAlign: "center" }}>
         <div style={{ maxWidth: 750, margin: "0 auto" }}>
-          <div style={{ background: "rgba(59,130,246,0.13)", color: "#60a5fa", padding: "6px 16px", borderRadius: 20, fontSize: 13, fontWeight: 600, display: "inline-block", marginBottom: 24 }}>Création de sites web pour professionnels</div>
+          <div style={{ background: "rgba(59,130,246,0.13)", color: "#60a5fa", padding: "6px 16px", borderRadius: 20, fontSize: 13, fontWeight: 600, display: "inline-block", marginBottom: 24 }}>Création de sites web à Marseille & Bouches-du-Rhône</div>
           <h1 className="hero-t" style={{ fontSize: m ? 32 : 50, fontWeight: 900, color: "#fff", lineHeight: 1.1, margin: "0 0 20px" }}>Vos clients vous cherchent sur Google. <span style={{ color: "#3b82f6" }}>Ils vous trouvent ?</span></h1>
-          <p className="hero-s" style={{ fontSize: m ? 16 : 18, color: "#94a3b8", margin: "0 auto 20px", lineHeight: 1.7, maxWidth: 560 }}>Un site professionnel pour votre activité, livré en 48h. Moderne, rapide, visible sur Google. À partir de 399€.</p>
+          <p className="hero-s" style={{ fontSize: m ? 16 : 18, color: "#94a3b8", margin: "0 auto 20px", lineHeight: 1.7, maxWidth: 560 }}>Votre site professionnel livré en 48h. Le partenaire web des artisans et PME à Marseille et dans les Bouches-du-Rhône. À partir de 399€.</p>
           <div className="hero-j" style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap", marginBottom: 28 }}>
             {["\uD83D\uDD27 Électricien","\uD83D\uDC85 Prothésiste ongulaire","\uD83C\uDF55 Restaurant","\uD83D\uDD28 Plombier","\uD83D\uDC87 Coiffeur","\uD83C\uDFD7\uFE0F BTP","\uD83D\uDCF8 Photographe","\uD83E\uDDF9 Nettoyage"].map((j,i) => (
               <span key={i} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "#94a3b8", padding: "6px 14px", borderRadius: 20, fontSize: 13 }}>{j}</span>
@@ -728,8 +728,8 @@ export default function App() {
       {/* METIERS */}
       <div id="metiers" style={{ padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Un site adapté à votre métier</h2>
-          <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Chaque profession a ses besoins. On s'adapte.</p>
+          <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Un site adapté à votre métier, à Marseille</h2>
+          <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Artisans et commerçants à Marseille et dans les Bouches-du-Rhône — on connaît vos besoins.</p>
           <div style={{ display: "grid", gridTemplateColumns: m ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: 14 }}>
             {METIERS.map((mt, i) => (
               <div key={i} className="card-fx" style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 16px", textAlign: "center" }}
@@ -747,7 +747,7 @@ export default function App() {
       <div id="offres" style={{ background: "#f8fafc", padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Des offres claires, sans surprise</h2>
-          <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Pas d'abonnement caché. Vous êtes propriétaire de votre site.</p>
+          <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Pas d'abonnement caché. Vous êtes propriétaire de votre site. Basé à Marseille, on se déplace.</p>
           <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {PLANS.map((plan, i) => (
               <div key={i} className="plan-fx" style={{ background: plan.highlight ? "#0f172a" : "#fff", border: plan.orange ? "2px solid #f97316" : plan.highlight ? "2px solid #3b82f6" : "1px solid #e2e8f0", borderRadius: 20, padding: 32, position: "relative", display: "flex", flexDirection: "column" }}>
@@ -883,7 +883,7 @@ export default function App() {
       <div id="contact" style={{ background: "#0f172a", padding: m ? "50px 20px" : "70px 20px" }}>
         <div style={{ maxWidth: 550, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, color: "#fff", margin: "0 0 8px" }} className="reveal">Demandez votre devis gratuit</h2>
-          <p style={{ fontSize: 15, color: "#94a3b8", margin: "0 0 20px" }}>Réponse en moins de 24h. Sans engagement.</p>
+          <p style={{ fontSize: 15, color: "#94a3b8", margin: "0 0 20px" }}>Réponse en moins de 24h. Sans engagement. Basé à Marseille.</p>
           <button onClick={() => setShowRdv(true)} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", padding: "12px 24px", borderRadius: 30, color: "#4ade80", fontSize: 15, fontWeight: 600, cursor: "pointer", marginBottom: 24 }}>📅 Ou prenez directement un RDV de 15 min</button>
           <div style={{ background: "#1e293b", borderRadius: 20, padding: m ? 24 : 32, textAlign: "left" }}>
             {[{ l: "Votre nom ou entreprise", p: "Ex: Boulangerie Martin, Électricité Dupont..." }, { l: "Email ou téléphone", p: "email@exemple.com ou 06 12 34 56 78" }, { l: "Votre métier", p: "Ex: Électricien, restaurant, coiffeur..." }].map((f, i) => (
@@ -955,7 +955,7 @@ export default function App() {
           <button onClick={() => setCgv(true)} style={{ background: "none", border: "none", color: "#94a3b8", fontSize: 12, cursor: "pointer", textDecoration: "underline", marginRight: 16, fontFamily: "inherit" }}>Mentions légales</button>
           <button onClick={() => setCgv(true)} style={{ background: "none", border: "none", color: "#94a3b8", fontSize: 12, cursor: "pointer", textDecoration: "underline", fontFamily: "inherit" }}>CGV</button>
         </div>
-        <p style={{ fontSize: 12, color: "#94a3b8", margin: 0 }}>{"©"} {new Date().getFullYear()} Site Minute {"—"} Création de sites web pour artisans, commerces et PME</p>
+        <p style={{ fontSize: 12, color: "#94a3b8", margin: 0 }}>{"©"} {new Date().getFullYear()} Site Minute {"—"} Création de sites web à Marseille — Artisans, commerces et PME — Bouches-du-Rhône</p>
       </div>
 
       {/* COOKIE BANNER */}
