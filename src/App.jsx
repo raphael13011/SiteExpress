@@ -364,6 +364,19 @@ export default function App() {
   const [sel, setSel] = useState([]);
   const [cgv, setCgv] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
+  const [cookieConsent, setCookieConsent] = useState(() => {
+    try { return window.sessionStorage?.getItem("cookie_consent"); } catch(e) { return null; }
+  });
+
+  const acceptCookies = () => {
+    setCookieConsent("accepted");
+    try { window.sessionStorage?.setItem("cookie_consent", "accepted"); } catch(e) {}
+  };
+  const refuseCookies = () => {
+    setCookieConsent("refused");
+    try { window.sessionStorage?.setItem("cookie_consent", "refused"); } catch(e) {}
+    try { window['ga-disable-G-6T2955EZ45'] = true; } catch(e) {}
+  };
   const [page, setPage] = useState("home");
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [showRdv, setShowRdv] = useState(false);
@@ -928,6 +941,24 @@ export default function App() {
         </div>
         <p style={{ fontSize: 12, color: "#94a3b8", margin: 0 }}>{"©"} {new Date().getFullYear()} Site Minute {"—"} Création de sites web pour artisans, commerces et PME</p>
       </div>
+
+      {/* COOKIE BANNER */}
+      {!cookieConsent && (
+        <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 998, background: "#0f172a", borderTop: "1px solid #1e293b", padding: m ? "16px" : "20px 32px", boxShadow: "0 -4px 20px rgba(0,0,0,0.2)" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", alignItems: "center", gap: m ? 12 : 24, flexWrap: "wrap" }}>
+            <div style={{ flex: 1, minWidth: 250 }}>
+              <p style={{ fontSize: 13, color: "#cbd5e1", margin: "0 0 4px", lineHeight: 1.6 }}>
+                Ce site utilise des cookies pour mesurer l'audience via Google Analytics. Aucune donnée personnelle n'est vendue ou partagée.
+              </p>
+              <button onClick={() => setCgv(true)} style={{ background: "none", border: "none", color: "#64748b", fontSize: 11, cursor: "pointer", textDecoration: "underline", padding: 0, fontFamily: "inherit" }}>En savoir plus</button>
+            </div>
+            <div style={{ display: "flex", gap: 10 }}>
+              <button onClick={refuseCookies} style={{ background: "transparent", border: "1px solid #334155", color: "#94a3b8", padding: "10px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "inherit" }}>Refuser</button>
+              <button onClick={acceptCookies} style={{ background: "#3b82f6", border: "none", color: "#fff", padding: "10px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "inherit" }}>Accepter</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* CHATBOT */}
       <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 999 }}>
