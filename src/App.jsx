@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 
 const PLANS = [
-  { name: "Essentiel", price: "399", desc: "Votre vitrine en ligne en 48h", features: ["Template professionnel", "3 à 5 pages", "Adapté mobile & tablette", "Formulaire de contact", "Livré en 48h"], highlight: false },
-  { name: "Sur-Mesure", price: "699", desc: "Un site unique à votre image", features: ["Design 100% personnalisé", "Jusqu'à 10 pages", "Référencement Google (SEO)", "Google Analytics", "Formulaire avancé", "Livré en 5 jours"], highlight: true },
-  { name: "Pro", price: null, desc: "Solution complète sur mesure", features: ["Base de données clients", "Réservation en ligne", "Espace admin", "Fonctionnalités avancées", "Accompagnement complet"], highlight: false }
+  { name: "Essentiel", price: "399", desc: "Votre vitrine en ligne en 48h", features: ["Template professionnel", "3 à 5 pages", "Adapté mobile & tablette", "Formulaire de contact", "Livré en 48h"], highlight: false, orange: false },
+  { name: "Sur-Mesure", price: "699", desc: "Un site unique à votre image", features: ["Design 100% personnalisé", "Jusqu'à 10 pages", "Référencement Google (SEO)", "Google Analytics", "Formulaire avancé", "Livré en 5 jours"], highlight: true, orange: false },
+  { name: "Pro", price: null, desc: "Solution complète sur mesure", features: ["Base de données clients", "Réservation en ligne", "Espace admin", "Fonctionnalités avancées", "Accompagnement complet"], highlight: false, orange: false },
+  { name: "IA & Automation", price: "49", desc: "Boostez votre site avec l'IA", features: ["Chatbot IA 24h/24", "Prise de RDV automatique", "Réponse auto aux leads", "Relance email J+3 / J+7", "FAQ intelligente", "Devis automatique"], highlight: false, orange: true }
 ];
 
 const OPTIONS = [
@@ -733,22 +734,22 @@ export default function App() {
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, textAlign: "center", margin: "0 0 8px" }} className="reveal">Des offres claires, sans surprise</h2>
           <p style={{ fontSize: 15, color: "#64748b", textAlign: "center", margin: "0 0 40px" }}>Pas d'abonnement caché. Vous êtes propriétaire de votre site.</p>
-          <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(3, 1fr)", gap: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {PLANS.map((plan, i) => (
               <div key={i} className="plan-fx" style={{ background: plan.highlight ? "#0f172a" : "#fff", border: plan.highlight ? "2px solid #3b82f6" : "1px solid #e2e8f0", borderRadius: 20, padding: 32, position: "relative", display: "flex", flexDirection: "column" }}>
                 {plan.highlight && <div style={{ position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)", background: "#3b82f6", color: "#fff", padding: "4px 16px", borderRadius: 20, fontSize: 12, fontWeight: 600 }}>Le + choisi</div>}
                 <div style={{ fontSize: 14, fontWeight: 600, color: "#3b82f6", marginBottom: 6 }}>{plan.name}</div>
-                <div style={{ fontSize: 40, fontWeight: 900, color: plan.highlight ? "#fff" : "#0f172a", marginBottom: 4 }}>{plan.price ? <>{plan.price}<span style={{ fontSize: 18, fontWeight: 500 }}>{"€"}</span></> : "Sur devis"}</div>
-                <p style={{ fontSize: 14, color: plan.highlight ? "#94a3b8" : "#64748b", margin: "0 0 20px" }}>{plan.desc}</p>
+                <div style={{ fontSize: 40, fontWeight: 900, color: (plan.highlight || plan.orange) ? "#fff" : "#0f172a", marginBottom: 4 }}>{plan.price ? <>{plan.orange && <span style={{ fontSize: 13, fontWeight: 500, display: "block", marginBottom: -4 }}>à partir de</span>}{plan.price}<span style={{ fontSize: 18, fontWeight: 500 }}>{"€"}</span></> : "Sur devis"}</div>
+                <p style={{ fontSize: 14, color: (plan.highlight || plan.orange) ? "#94a3b8" : "#64748b", margin: "0 0 20px" }}>{plan.desc}</p>
                 <div style={{ flex: 1 }}>
                   {plan.features.map((f, j) => (
                     <div key={j} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
-                      <div style={{ width: 18, height: 18, borderRadius: "50%", background: plan.highlight ? "rgba(59,130,246,0.15)" : "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, color: "#3b82f6", flexShrink: 0 }}>{"✓"}</div>
-                      <span style={{ fontSize: 14, color: plan.highlight ? "#cbd5e1" : "#475569" }}>{f}</span>
+                      <div style={{ width: 18, height: 18, borderRadius: "50%", background: plan.orange ? "rgba(249,115,22,0.15)" : plan.highlight ? "rgba(59,130,246,0.15)" : "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, color: plan.orange ? "#f97316" : "#3b82f6", flexShrink: 0 }}>{"✓"}</div>
+                      <span style={{ fontSize: 14, color: (plan.highlight || plan.orange) ? "#cbd5e1" : "#475569" }}>{f}</span>
                     </div>
                   ))}
                 </div>
-                <button onClick={() => go("contact")} style={{ width: "100%", padding: 14, marginTop: 20, background: plan.highlight ? "#3b82f6" : "transparent", border: plan.highlight ? "none" : "1px solid #e2e8f0", borderRadius: 10, color: plan.highlight ? "#fff" : "#0f172a", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{plan.price ? "Choisir cette offre" : "Demander un devis"}</button>
+                <button onClick={() => go("contact")} style={{ width: "100%", padding: 14, marginTop: 20, background: plan.orange ? "#f97316" : plan.highlight ? "#3b82f6" : "transparent", border: (plan.highlight || plan.orange) ? "none" : "1px solid #e2e8f0", borderRadius: 10, color: (plan.highlight || plan.orange) ? "#fff" : "#0f172a", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{plan.price ? "Choisir cette offre" : "Demander un devis"}</button>
               </div>
             ))}
           </div>
@@ -765,45 +766,6 @@ export default function App() {
           <div style={{ background: "#0f172a", color: "#fff", padding: "20px 32px", borderRadius: 14, textAlign: "center" }}>
             <div style={{ fontSize: 36, fontWeight: 900 }}>29{"€"}</div>
             <div style={{ fontSize: 13, color: "#94a3b8" }}>/ mois {"·"} sans engagement</div>
-          </div>
-        </div>
-      </div>
-
-      {/* IA & AUTOMATION */}
-      <div style={{ padding: m ? "50px 20px" : "70px 20px", background: "linear-gradient(135deg, #1a0a00, #2d1600)" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, justifyContent: "center", marginBottom: 8 }}>
-            <span style={{ background: "#f97316", color: "#fff", padding: "4px 14px", borderRadius: 20, fontSize: 12, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>Nouveau</span>
-            <h2 style={{ fontSize: m ? 26 : 34, fontWeight: 900, color: "#fff", margin: 0 }}>IA & Automation</h2>
-          </div>
-          <p style={{ fontSize: 15, color: "#a1887f", textAlign: "center", margin: "0 0 36px" }}>Donnez des superpouvoirs à votre site</p>
-
-          <div style={{ display: "grid", gridTemplateColumns: m ? "1fr" : "repeat(3, 1fr)", gap: 16 }}>
-            {[
-              { icon: "🤖", name: "Chatbot IA", price: "99", desc: "Un assistant qui répond à vos clients 24h/24. Il connaît vos services, vos tarifs, vos horaires. Vos clients obtiennent des réponses même à 3h du matin." },
-              { icon: "📅", name: "Prise de RDV auto", price: "69", desc: "Vos clients réservent directement un créneau sur votre planning. Plus de ping-pong par téléphone. Synchronisé avec votre agenda." },
-              { icon: "📧", name: "Réponse auto aux leads", price: "49", desc: "Un client remplit votre formulaire ? Il reçoit un email personnalisé automatiquement avec vos infos et un lien de prise de RDV." },
-              { icon: "🔄", name: "Relance automatique", price: "79", desc: "Un prospect a demandé un devis mais n'a pas répondu ? Email de relance automatique à J+3 et J+7. Sans lever le petit doigt." },
-              { icon: "❓", name: "FAQ intelligente", price: "59", desc: "L'IA génère et répond aux questions fréquentes de votre métier. Mise à jour automatique selon les questions reçues." },
-              { icon: "📋", name: "Devis automatique", price: "129", desc: "Le client décrit son besoin, l'IA génère un devis estimatif personnalisé. Vous validez et envoyez. Gain de temps énorme." }
-            ].map((item, i) => (
-              <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(249,115,22,0.2)", borderRadius: 16, padding: 24, transition: "all 0.3s" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#f97316"; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 40px rgba(249,115,22,0.1)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.2)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
-              >
-                <div style={{ fontSize: 32, marginBottom: 12 }}>{item.icon}</div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 800, color: "#fff", margin: 0 }}>{item.name}</h3>
-                  <span style={{ color: "#f97316", fontSize: 16, fontWeight: 800 }}>{item.price}€</span>
-                </div>
-                <p style={{ fontSize: 13, color: "#a1887f", margin: 0, lineHeight: 1.6 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: "center", marginTop: 28 }}>
-            <p style={{ fontSize: 13, color: "#a1887f", marginBottom: 16 }}>Toutes les options IA sont compatibles avec nos 3 formules de site</p>
-            <button onClick={() => go("contact")} style={{ background: "#f97316", color: "#fff", border: "none", padding: "14px 32px", borderRadius: 10, fontSize: 16, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 20px rgba(249,115,22,0.3)" }}>Demander un devis IA</button>
           </div>
         </div>
       </div>
