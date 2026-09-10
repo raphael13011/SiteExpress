@@ -674,7 +674,7 @@ export default function App() {
       <nav style={{ maxWidth: 1100, margin: "0 auto", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ fontSize: 22, fontWeight: 900 }}>Site <span style={{ color: "#3b82f6" }}>Minute</span></div>
         <div style={{ display: "flex", gap: m ? 8 : 20, alignItems: "center" }}>
-          {!m && <><span onClick={() => go("metiers")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Métiers</span><span onClick={() => go("offres")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Offres</span><span onClick={() => go("options")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Options</span><span onClick={() => setPage("blog")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Blog</span><span onClick={() => setShowRdv(true)} style={{ color: "#64748b", fontSize: 14, cursor: "pointer" }}>RDV</span></>}
+          {!m && <><span onClick={() => setPage("blog")} style={{ fontSize: 14, color: "#64748b", cursor: "pointer" }}>Blog</span><span onClick={() => setShowRdv(true)} style={{ color: "#64748b", fontSize: 14, cursor: "pointer" }}>RDV</span></>}
           <button onClick={() => m ? setShowRdv(true) : go("contact")} style={{ background: "#3b82f6", color: "#fff", border: "none", padding: "8px 16px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap" }}>{m ? "📅 RDV" : "Devis gratuit"}</button>
         </div>
       </nav>
