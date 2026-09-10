@@ -874,7 +874,7 @@ export default function App() {
           <div style={{ fontSize: 48 }}>{"\uD83D\uDEE1\uFE0F"}</div>
           <div style={{ flex: 1, minWidth: 250 }}>
             <h3 style={{ fontSize: 22, fontWeight: 800, color: "#fff", margin: "0 0 8px" }}>Satisfait ou vous ne payez pas</h3>
-            <p style={{ fontSize: 15, color: "#bbf7d0", margin: 0, lineHeight: 1.6 }}>On crée votre site, vous le validez. Si le résultat ne vous convient pas, vous ne payez rien. Zéro risque, zéro engagement.</p>
+            <p style={{ fontSize: 15, color: "#bbf7d0", margin: 0, lineHeight: 1.6 }}>On crée votre site, vous le validez. Si le résultat ne vous convient pas, vous ne payez rien. Zéro risque, zéro engagement. On peut même se voir autour d'un café à Marseille.</p>
           </div>
         </div>
       </div>
